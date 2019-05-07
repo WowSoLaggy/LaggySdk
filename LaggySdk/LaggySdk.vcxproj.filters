@@ -1,17 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Исходные файлы">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="src">
+      <UniqueIdentifier>{b3c1660b-8bd5-4ff8-b029-483e7a6932ee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="libs">
+      <UniqueIdentifier>{0be3e622-28e0-4d00-8972-ef7e84489256}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы ресурсов">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="src\Events">
+      <UniqueIdentifier>{caf6a8d3-5f85-4e51-a8c8-9d18e963dbd1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\FileSystem">
+      <UniqueIdentifier>{cccd3a2d-3532-40fe-8e09-65277d573467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Helpers">
+      <UniqueIdentifier>{684350b0-c698-4ea0-b5c4-bf783c784f35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Math">
+      <UniqueIdentifier>{36a6cb45-162e-4552-9c22-de7c393ddf82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Random">
+      <UniqueIdentifier>{25612930-38e6-4d38-a276-21771f62c053}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Strings">
+      <UniqueIdentifier>{36d4b161-ee77-4b4b-9260-89a943be4c5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Timer">
+      <UniqueIdentifier>{d5b5d551-3e88-466e-9599-76a6c43f51ba}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dirent.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="IEvent.h">
+      <Filter>src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystemUtils.h">
+      <Filter>src\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="IModelName.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="IPosition3.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="IRotation3.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="IScale3.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpeed3.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="ITextureName.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="IUniqueId.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="IVisibility.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>src\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkFwd.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtils.h">
+      <Filter>src\Strings</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>src\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Property.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>src\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>src\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="IUniqueId.cpp">
+      <Filter>src\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>src\Random</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>src\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>src\Math</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
