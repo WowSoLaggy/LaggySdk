@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="Contracts.h" />
     <ClInclude Include="dirent.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="FileSystemUtils.h" />

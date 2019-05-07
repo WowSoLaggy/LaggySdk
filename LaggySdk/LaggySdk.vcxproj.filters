@@ -28,6 +28,9 @@
     <Filter Include="src\Timer">
       <UniqueIdentifier>{d5b5d551-3e88-466e-9599-76a6c43f51ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Contracts">
+      <UniqueIdentifier>{10ce0c4b-7de4-4835-9d27-14f951c403b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dirent.h">
@@ -98,6 +101,9 @@
     </ClInclude>
     <ClInclude Include="Property.h">
       <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Contracts.h">
+      <Filter>src\Contracts</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
