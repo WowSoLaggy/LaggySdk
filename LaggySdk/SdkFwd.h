@@ -14,4 +14,6 @@ namespace Sdk
 
   using UniqueId = int;
 
+  struct Message;
+
 } // ns Sdk

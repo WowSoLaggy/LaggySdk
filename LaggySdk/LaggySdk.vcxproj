@@ -140,6 +140,7 @@
     <ClInclude Include="dirent.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="FileSystemUtils.h" />
+    <ClInclude Include="HandleMessages.h" />
     <ClInclude Include="IEvent.h" />
     <ClInclude Include="IModelName.h" />
     <ClInclude Include="IPosition3.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="IUniqueId.h" />
     <ClInclude Include="IVisibility.h" />
     <ClInclude Include="Math.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Rect.h" />
@@ -158,10 +160,12 @@
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="HandleMessages.cpp" />
     <ClCompile Include="IUniqueId.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Rect.cpp" />
@@ -172,6 +176,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Vector.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

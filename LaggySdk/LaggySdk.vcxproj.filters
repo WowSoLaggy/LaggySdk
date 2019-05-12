@@ -31,6 +31,15 @@
     <Filter Include="src\Contracts">
       <UniqueIdentifier>{10ce0c4b-7de4-4835-9d27-14f951c403b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\WindowsApi">
+      <UniqueIdentifier>{8b6ce2bc-0205-4c7a-bed2-72923e627292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\WindowsApi\Messages">
+      <UniqueIdentifier>{b625c582-92ea-4b3b-bbec-b6ce42649a03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\WindowsApi\Window">
+      <UniqueIdentifier>{0bd526a7-f03b-43aa-a3e2-bc14d4702139}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dirent.h">
@@ -105,6 +114,15 @@
     <ClInclude Include="Contracts.h">
       <Filter>src\Contracts</Filter>
     </ClInclude>
+    <ClInclude Include="HandleMessages.h">
+      <Filter>src\WindowsApi\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>src\WindowsApi\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>src\WindowsApi\Window</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -127,6 +145,12 @@
     </ClCompile>
     <ClCompile Include="Vector.cpp">
       <Filter>src\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleMessages.cpp">
+      <Filter>src\WindowsApi\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>src\WindowsApi\Window</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

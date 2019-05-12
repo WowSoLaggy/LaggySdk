@@ -1,6 +1,10 @@
 #pragma once
 
 #define NOMINMAX
+#define VC_EXTRALEAN
+#define WIN32_LEAN_AND_MEAN
+#define _ENABLE_EXTENDED_ALIGNED_STORAGE
+#include <Windows.h>
 
 #include <chrono>
 #include <cstdint>
