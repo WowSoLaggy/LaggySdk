@@ -16,4 +16,6 @@ namespace Sdk
 
   struct Message;
 
+  class Window;
+
 } // ns Sdk
