@@ -6,7 +6,7 @@ namespace Sdk
 {
   void randomize()
   {
-    srand((unsigned int)time(nullptr));
+    std::srand((unsigned int)time(nullptr));
   }
 
 } // ns Sdk
