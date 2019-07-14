@@ -6,6 +6,7 @@
 #define _ENABLE_EXTENDED_ALIGNED_STORAGE
 #include <Windows.h>
 
+#include <array>
 #include <chrono>
 #include <cstdint>
 #include <fstream>
@@ -14,6 +15,7 @@
 #include <memory>
 #include <numeric>
 #include <regex>
+#include <set>
 #include <string>
 #include <thread>
 #include <unordered_map>
