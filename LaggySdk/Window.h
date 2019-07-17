@@ -5,10 +5,11 @@
 
 namespace Sdk
 {
-  class Window
+  class Window final
   {
   public:
     Window(int i_width, int i_height, std::string i_appName);
+    ~Window();
 
     HWND getHWnd() const { return d_hWnd; }
 

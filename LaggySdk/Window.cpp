@@ -16,7 +16,7 @@ namespace Sdk
       }
       return DefWindowProc(hWnd, msg, wParam, lParam);
     }
-  }
+  } // Anonymous NS
 
 
   Window::Window(int i_width, int i_height, std::string i_appName)
@@ -51,8 +51,7 @@ namespace Sdk
       posX, posY, i_width, i_height, nullptr, nullptr, d_hInstance, nullptr);
   }
 
-
-  void Window::dispose()
+  Window::~Window()
   {
     DestroyWindow(d_hWnd);
     d_hWnd = nullptr;
@@ -60,6 +59,7 @@ namespace Sdk
     UnregisterClass(d_appName.c_str(), d_hInstance);
     d_hInstance = nullptr;
   }
+
 
   void Window::show() const
   {
