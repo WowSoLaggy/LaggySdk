@@ -19,20 +19,9 @@ namespace Sdk
   }
 
 
-  Window::Window()
-    : d_hWnd(nullptr)
-    , d_hInstance(nullptr)
+  Window::Window(int i_width, int i_height, std::string i_appName)
+    : d_appName(std::move(i_appName))
   {
-  }
-
-
-  void Window::create(int i_width, int i_height, std::string i_appName)
-  {
-    if (d_hWnd || d_hInstance)
-      dispose();
-
-    d_appName = std::move(i_appName);
-
     // Register win class
 
     d_hInstance = GetModuleHandle(nullptr);
@@ -61,6 +50,7 @@ namespace Sdk
     d_hWnd = CreateWindowEx(0, d_appName.c_str(), d_appName.c_str(), WS_POPUP,
       posX, posY, i_width, i_height, nullptr, nullptr, d_hInstance, nullptr);
   }
+
 
   void Window::dispose()
   {
