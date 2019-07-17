@@ -26,12 +26,12 @@ namespace Sdk
   }
 
 
-  void Window::create(int i_width, int i_height, const std::string& i_appName)
+  void Window::create(int i_width, int i_height, std::string i_appName)
   {
     if (d_hWnd || d_hInstance)
       dispose();
 
-    d_appName = i_appName;
+    d_appName = std::move(i_appName);
 
     // Register win class
 
