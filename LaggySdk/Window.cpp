@@ -54,10 +54,7 @@ namespace Sdk
   Window::~Window()
   {
     DestroyWindow(d_hWnd);
-    d_hWnd = nullptr;
-
     UnregisterClass(d_appName.c_str(), d_hInstance);
-    d_hInstance = nullptr;
   }
 
 
