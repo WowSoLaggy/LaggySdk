@@ -15,6 +15,13 @@ namespace Sdk
     return { i_left.x + i_right.x, i_left.y + i_right.y };
   }
 
+  void operator+=(Vector2& io_left, const Vector2& i_right)
+  {
+    io_left.x += i_right.x;
+    io_left.y += i_right.y;
+  }
+
+
   Vector2 operator-(const Vector2& i_left, const Vector2& i_right)
   {
     return { i_left.x - i_right.x, i_left.y - i_right.y };

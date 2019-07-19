@@ -42,6 +42,8 @@ namespace Sdk
 
 
   Vector2 operator+(const Vector2& i_left, const Vector2& i_right);
+  void operator+=(Vector2& io_left, const Vector2& i_right);
+
   Vector2 operator-(const Vector2& i_left, const Vector2& i_right);
 
   Vector2 operator*(const Vector2& i_v, float i_mul);
