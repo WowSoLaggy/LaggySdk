@@ -44,6 +44,15 @@ namespace Sdk
     T dot(const Vector2<T>& i_v) const { return x * i_v.x + y * i_v.y; }
   };
 
+  struct Vector2_hash {
+  public:
+    template <typename T>
+    std::size_t operator()(const Vector2<T>& i_v) const
+    {
+      return std::hash<T>()(i_v.x) ^ std::hash<T>()(i_v.y);
+    }
+  };
+
   template <typename T>
   struct Vector3
   {
