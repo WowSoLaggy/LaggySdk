@@ -24,6 +24,8 @@ namespace Sdk
       y /= length;
     }
 
+    bool operator==(const Vector2<T>& i_right) const { return x == i_right.x && y == i_right.y; }
+
     void operator+=(const Vector2<T>& i_right)
     {
       x += i_right.x;
@@ -62,6 +64,8 @@ namespace Sdk
       y /= l;
       z /= l;
     }
+
+    bool operator==(const Vector3<T>& i_right) const { return x == i_right.x && y == i_right.y && z == i_right.z; }
 
     void operator+=(const Vector3<T>& i_right)
     {
@@ -110,6 +114,10 @@ namespace Sdk
       z /= length;
       w /= length;
     }
+
+    bool operator==(const Vector4<T>& i_right) const { return
+      x == i_right.x && y == i_right.y &&
+      z == i_right.z && w == i_right.w; }
 
     void operator+=(const Vector4<T>& i_right)
     {

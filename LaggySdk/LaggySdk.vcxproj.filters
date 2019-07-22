@@ -105,9 +105,6 @@
     <ClInclude Include="Timer.h">
       <Filter>src\Timer</Filter>
     </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>src\Math</Filter>
-    </ClInclude>
     <ClInclude Include="Property.h">
       <Filter>src\Helpers</Filter>
     </ClInclude>
@@ -122,6 +119,9 @@
     </ClInclude>
     <ClInclude Include="Window.h">
       <Filter>src\WindowsApi\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>src\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
