@@ -19,7 +19,7 @@ namespace Sdk
     void setWidth(float i_width);
     void setHeight(float i_height);
 
-    bool containsPoint(const Vector2& i_point) const;
+    bool containsPoint(const Vector2F& i_point) const;
 
   private:
     float d_width;

@@ -2,10 +2,6 @@
 
 namespace Sdk
 {
-  struct Vector2;
-  struct Vector3;
-  struct Vector4;
-
   class Circle;
   class Rect;
 

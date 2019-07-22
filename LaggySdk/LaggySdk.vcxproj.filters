@@ -143,9 +143,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Vector.cpp">
-      <Filter>src\Math</Filter>
-    </ClCompile>
     <ClCompile Include="HandleMessages.cpp">
       <Filter>src\WindowsApi\Messages</Filter>
     </ClCompile>

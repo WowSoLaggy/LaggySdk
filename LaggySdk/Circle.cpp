@@ -17,9 +17,9 @@ namespace Sdk
   }
 
 
-  bool Circle::containsPoint(const Vector2& i_point) const
+  bool Circle::containsPoint(const Vector2F& i_point) const
   {
-    return lengthSq(i_point) <= d_radiusSq;
+    return i_point.lengthSq() <= d_radiusSq;
   }
 
 } // ns Sdk

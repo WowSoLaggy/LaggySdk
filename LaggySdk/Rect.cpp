@@ -24,7 +24,7 @@ namespace Sdk
   }
 
 
-  bool Rect::containsPoint(const Vector2& i_point) const
+  bool Rect::containsPoint(const Vector2F& i_point) const
   {
     return !((i_point.x < d_widthHalf) || (d_widthHalf < i_point.x) ||
       (i_point.y < d_heightHalf) || (d_heightHalf < i_point.y));

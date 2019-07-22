@@ -17,7 +17,7 @@ namespace Sdk
 
     void setRadius(float i_radius);
 
-    bool containsPoint(const Vector2& i_point) const;
+    bool containsPoint(const Vector2F& i_point) const;
 
   private:
     float d_radius;

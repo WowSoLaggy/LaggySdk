@@ -5,91 +5,136 @@
 
 namespace Sdk
 {
+  template <typename T>
   struct Vector2
   {
-    float x;
-    float y;
+    T x;
+    T y;
 
-    static Vector2 zero() { return { 0.0f, 0.0f }; }
-    static Vector2 identity() { return { 1.0f, 1.0f }; }
+    static Vector2 zero() { return { (T)0, (T)0 }; }
+    static Vector2 identity() { return { (T)1, (T)1 }; }
+
+    T lengthSq() const { return x * x + y * y; }
+    T length() const { return std::sqrt<T>(lengthSq); }
+
+    void normalize()
+    {
+      T length = length();
+      x /= length;
+      y /= length;
+    }
+
+    void operator+=(const Vector2<T>& i_right)
+    {
+      x += i_right.x;
+      y += i_right.y;
+    }
+    void operator-=(const Vector2<T>& i_right) { operator+=(-i_right); }
+
+    Vector2<T> operator-() const { return Vector2<T>{ -x, -y }; }
+    Vector2<T> operator+(const Vector2<T>& i_right) const { return Vector2<T>{ x + i_right.x, y + i_right.y }; }
+    Vector2<T> operator-(const Vector2<T>& i_right) const {
+      return operator+(-i_right);
+    }
+    Vector2<T> operator*(T i_right) const { return Vector2<T>{ x * i_right, y * i_right }; }
+    Vector2<T> operator/(T i_right) const { return Vector2<T>{ x / i_right, y / i_right }; }
+
+    T dot(const Vector2<T>& i_v) const { return x * i_v.x + y * i_v.y; }
   };
 
+  template <typename T>
   struct Vector3
   {
-    float x;
-    float y;
-    float z;
+    T x;
+    T y;
+    T z;
 
-    static Vector3 zero() { return { 0.0f, 0.0f, 0.0f }; }
-    static Vector3 identity() { return { 1.0f, 1.0f, 1.0f }; }
+    static Vector3 zero() { return { (T)0, (T)0, (T)0 }; }
+    static Vector3 identity() { return { (T)1, (T)1, (T)1 }; }
+
+    T lengthSq() const { return x * x + y * y + z * z; }
+    T length() const { return std::sqrt(lengthSq()); }
+
+    void normalize()
+    {
+      T l = length();
+      x /= l;
+      y /= l;
+      z /= l;
+    }
+
+    void operator+=(const Vector3<T>& i_right)
+    {
+      x += i_right.x;
+      y += i_right.y;
+      z += i_right.z;
+    }
+    void operator-=(const Vector2<T>& i_right) { operator+=(-i_right); }
+
+    Vector3<T> operator-() const { return Vector3<T>{ -x, -y, -z }; }
+    Vector3<T> operator+(const Vector3<T>& i_right) const { return Vector3<T>{ x + i_right.x, y + i_right.y,
+      z + i_right.z }; }
+    Vector3<T> operator-(const Vector3<T>& i_right) const { return operator+(-i_right); }
+    Vector3<T> operator*(T i_right) const { return Vector3<T>{ x * i_right, y * i_right, z * i_right }; }
+    Vector3<T> operator/(T i_right) const { return Vector3<T>{ x / i_right, y / i_right, z / i_right }; }
+
+    Vector3<T> cross(const Vector3<T>& i_v) const
+    {
+      return {
+        y * i_v.z - z * i_v.y,
+        z * i_v.x - x * i_v.z,
+        x * i_v.y - y * i_v.x
+      };
+    }
   };
-
+  
+  template <typename T>
   struct Vector4
   {
-    float x;
-    float y;
-    float z;
-    float w;
+    T x;
+    T y;
+    T z;
+    T w;
 
-    static Vector4 zero() { return { 0.0f, 0.0f, 0.0f, 0.0f }; }
-    static Vector4 identity() { return { 1.0f, 1.0f, 1.0f, 1.0f }; }
+    static Vector4 zero() { return { (T)0, (T)0, (T)0, (T)0 }; }
+    static Vector4 identity() { return { (T)1, (T)1, (T)1, (T)1 }; }
+
+    T lengthSq() const { return x * x + y * y + z * z + w * w; }
+    T length() const { return std::sqrt<T>(lengthSq); }
+
+    void normalize()
+    {
+      T length = length();
+      x /= length;
+      y /= length;
+      z /= length;
+      w /= length;
+    }
+
+    void operator+=(const Vector4<T>& i_right)
+    {
+      x += i_right.x;
+      y += i_right.y;
+      z += i_right.z;
+      w += i_right.w;
+    }
+    void operator-=(const Vector2<T>& i_right) { operator+=(-i_right); }
+    
+    Vector4<T> operator-() const { return Vector4<T>{ -x, -y, -z, -w }; }
+    Vector4<T> operator+(const Vector4<T>& i_right) { return Vector4<T>{ x + i_right.x, y + i_right.y,
+      z + i_right.z, w + i_right.w }; }
+    Vector4<T> operator-(const Vector4<T>& i_right) { return operator+(-i_right); }
+    Vector4<T> operator*(T i_right) { return Vector4<T>{ x * i_right, y * i_right, z * i_right, w * i_right }; }
+    Vector4<T> operator/(T i_right) { return Vector4<T>{ x / i_right, y / i_right, z / i_right, w / i_right }; }
   };
 
-
-  // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-  // Vector2
-  // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-
-  Vector2 operator+(const Vector2& i_left, const Vector2& i_right);
-  void operator+=(Vector2& io_left, const Vector2& i_right);
-
-  Vector2 operator-(const Vector2& i_left, const Vector2& i_right);
-
-  Vector2 operator*(const Vector2& i_v, float i_mul);
-
-  float length(const Vector2& i_v);
-  float lengthSq(const Vector2& i_v);
-  Vector2 normalize(const Vector2& i_v);
-
-  float dot(const Vector2& i_v1, const Vector2& i_v2);
-
-  Vector2 rotate(const Vector2& i_v, float i_angle);
-
-  std::string toString(const Vector2& i_v);
-
-
-  // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-  // Vector3
-  // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-
-  Vector3 operator+(const Vector3& i_left, const Vector3& i_right);
-  Vector3 operator-(const Vector3& i_left, const Vector3& i_right);
-
-  Vector3 operator+=(Vector3& i_left, const Vector3& i_right);
-  Vector3 operator-=(Vector3& i_left, const Vector3& i_right);
-
-  Vector3 operator-(const Vector3& i_v);
-
-  Vector3 operator*(const Vector3& i_v, float i_mul);
-  Vector3 operator/(const Vector3& i_v, float i_mul);
-
-  float length(const Vector3& i_v);
-  float lengthSq(const Vector3& i_v);
-  Vector3 normalize(const Vector3& i_v);
-
-  Vector3 cross(const Vector3& i_left, const Vector3& i_right);
-
-  std::string toString(const Vector3& i_v);
-
-
-  // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-  // Common
-  // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-
-  Vector2 xyz2xz(const Vector3& i_v);
-  Vector3 xy2x0z(const Vector2& i_v, float i_y = 0.0f);
-
+  using Vector2I = Vector2<int>;
+  using Vector3I = Vector3<int>;
+  using Vector4I = Vector4<int>;
+  using Vector2F = Vector2<float>;
+  using Vector3F = Vector3<float>;
+  using Vector4F = Vector4<float>;
+  using Vector2D = Vector2<double>;
+  using Vector3D = Vector3<double>;
+  using Vector4D = Vector4<double>;
 } // ns Sdk
