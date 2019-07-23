@@ -3,7 +3,6 @@
 namespace Sdk
 {
   class Circle;
-  class Rect;
 
   class IEvent;
   class EventHandler;

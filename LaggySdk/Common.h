@@ -6,6 +6,7 @@
 #define _ENABLE_EXTENDED_ALIGNED_STORAGE
 #include <Windows.h>
 
+#include <algorithm>
 #include <array>
 #include <chrono>
 #include <cstdint>
