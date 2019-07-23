@@ -8,8 +8,8 @@ namespace Sdk
   template <typename T>
   struct Vector2
   {
-    T x;
-    T y;
+    T x{ (T)0 };
+    T y{ (T)0 };
 
     static Vector2 zero() { return { (T)0, (T)0 }; }
     static Vector2 identity() { return { (T)1, (T)1 }; }
@@ -56,9 +56,9 @@ namespace Sdk
   template <typename T>
   struct Vector3
   {
-    T x;
-    T y;
-    T z;
+    T x{ (T)0 };
+    T y{ (T)0 };
+    T z{ (T)0 };
 
     static Vector3 zero() { return { (T)0, (T)0, (T)0 }; }
     static Vector3 identity() { return { (T)1, (T)1, (T)1 }; }
@@ -104,10 +104,10 @@ namespace Sdk
   template <typename T>
   struct Vector4
   {
-    T x;
-    T y;
-    T z;
-    T w;
+    T x{ (T)0 };
+    T y{ (T)0 };
+    T z{ (T)0 };
+    T w{ (T)0 };
 
     static Vector4 zero() { return { (T)0, (T)0, (T)0, (T)0 }; }
     static Vector4 identity() { return { (T)1, (T)1, (T)1, (T)1 }; }
