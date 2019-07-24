@@ -10,6 +10,7 @@
 #include <array>
 #include <chrono>
 #include <cstdint>
+#include <filesystem>
 #include <fstream>
 #include <functional>
 #include <map>
@@ -24,3 +25,6 @@
 #include <vector>
 
 #include "dirent.h"
+
+
+namespace fs = std::experimental::filesystem;

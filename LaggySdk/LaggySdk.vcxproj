@@ -139,7 +139,6 @@
     <ClInclude Include="Contracts.h" />
     <ClInclude Include="dirent.h" />
     <ClInclude Include="EventHandler.h" />
-    <ClInclude Include="FileSystemUtils.h" />
     <ClInclude Include="HandleMessages.h" />
     <ClInclude Include="IEvent.h" />
     <ClInclude Include="IModelName.h" />

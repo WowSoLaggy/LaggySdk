@@ -10,9 +10,6 @@
     <Filter Include="src\Events">
       <UniqueIdentifier>{caf6a8d3-5f85-4e51-a8c8-9d18e963dbd1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\FileSystem">
-      <UniqueIdentifier>{cccd3a2d-3532-40fe-8e09-65277d573467}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Helpers">
       <UniqueIdentifier>{684350b0-c698-4ea0-b5c4-bf783c784f35}</UniqueIdentifier>
     </Filter>
@@ -53,9 +50,6 @@
     </ClInclude>
     <ClInclude Include="IEvent.h">
       <Filter>src\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="FileSystemUtils.h">
-      <Filter>src\FileSystem</Filter>
     </ClInclude>
     <ClInclude Include="IModelName.h">
       <Filter>src\Helpers</Filter>
