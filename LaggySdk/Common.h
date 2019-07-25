@@ -16,6 +16,7 @@
 #include <map>
 #include <memory>
 #include <numeric>
+#include <optional>
 #include <regex>
 #include <set>
 #include <string>
