@@ -44,7 +44,7 @@ namespace Sdk
     Vector2<T> center() const { return (p1 + p2) / 2; }
     Vector2<T> topLeft() const { return { left(), top() }; }
     Vector2<T> bottomRight() const { return { right(), bottom() }; }
-
+    Vector2<T> size() const { return { width(), height() }; }
 
     bool containsPoint(const Vector2<T>& i_point) const
     {
