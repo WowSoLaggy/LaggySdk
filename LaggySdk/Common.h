@@ -13,6 +13,7 @@
 #include <filesystem>
 #include <fstream>
 #include <functional>
+#include <future>
 #include <map>
 #include <memory>
 #include <numeric>
@@ -30,3 +31,4 @@
 
 
 namespace fs = std::experimental::filesystem;
+using namespace std::literals;
