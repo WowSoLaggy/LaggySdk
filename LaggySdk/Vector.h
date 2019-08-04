@@ -25,6 +25,7 @@ namespace Sdk
     }
 
     bool operator==(const Vector2<T>& i_right) const { return x == i_right.x && y == i_right.y; }
+    bool operator!=(const Vector2<T>& i_right) const { return !operator==(i_right); }
 
     void operator+=(const Vector2<T>& i_right)
     {
@@ -75,6 +76,7 @@ namespace Sdk
     }
 
     bool operator==(const Vector3<T>& i_right) const { return x == i_right.x && y == i_right.y && z == i_right.z; }
+    bool operator!=(const Vector3<T>& i_right) const { return !operator==(i_right); }
 
     void operator+=(const Vector3<T>& i_right)
     {
@@ -127,6 +129,7 @@ namespace Sdk
     bool operator==(const Vector4<T>& i_right) const { return
       x == i_right.x && y == i_right.y &&
       z == i_right.z && w == i_right.w; }
+    bool operator!=(const Vector4<T>& i_right) const { return !operator==(i_right); }
 
     void operator+=(const Vector4<T>& i_right)
     {
