@@ -43,6 +43,9 @@
     <Filter Include="libs\jsoncpp">
       <UniqueIdentifier>{39a471d2-e579-4370-a824-a21021723e8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Streams">
+      <UniqueIdentifier>{315c4be5-1cda-4220-9247-28b594da02ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -128,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="json-forwards.h">
       <Filter>libs\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Streams.h">
+      <Filter>src\Streams</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
