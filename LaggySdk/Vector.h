@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Streams.h"
+
+#include <iostream>
 #include <string>
 
 
@@ -43,6 +46,15 @@ namespace Sdk
     Vector2<T> operator/(T i_right) const { return Vector2<T>{ x / i_right, y / i_right }; }
 
     T dot(const Vector2<T>& i_v) const { return x * i_v.x + y * i_v.y; }
+
+    
+    friend std::ostream& operator<<(std::ostream& io_stream, const Vector2<T>& i_vector)
+    {
+      write(io_stream, i_vector.x);
+      write(io_stream, i_vector.y);
+
+      return io_stream;
+    }
   };
 
   struct Vector2_hash {
@@ -53,6 +65,7 @@ namespace Sdk
       return std::hash<T>()(i_v.x) ^ std::hash<T>()(i_v.y);
     }
   };
+
 
   template <typename T>
   struct Vector3
@@ -101,8 +114,19 @@ namespace Sdk
         x * i_v.y - y * i_v.x
       };
     }
+
+
+    friend std::ostream& operator<<(std::ostream& io_stream, const Vector3<T>& i_vector)
+    {
+      write(io_stream, i_vector.x);
+      write(io_stream, i_vector.y);
+      write(io_stream, i_vector.z);
+
+      return io_stream;
+    }
   };
-  
+
+
   template <typename T>
   struct Vector4
   {
@@ -146,7 +170,19 @@ namespace Sdk
     Vector4<T> operator-(const Vector4<T>& i_right) { return operator+(-i_right); }
     Vector4<T> operator*(T i_right) { return Vector4<T>{ x * i_right, y * i_right, z * i_right, w * i_right }; }
     Vector4<T> operator/(T i_right) { return Vector4<T>{ x / i_right, y / i_right, z / i_right, w / i_right }; }
+
+
+    friend std::ostream& operator<<(std::ostream& io_stream, const Vector4<T>& i_vector)
+    {
+      write(io_stream, i_vector.x);
+      write(io_stream, i_vector.y);
+      write(io_stream, i_vector.z);
+      write(io_stream, i_vector.w);
+
+      return io_stream;
+    }
   };
+
 
   using Vector2I = Vector2<int>;
   using Vector3I = Vector3<int>;
