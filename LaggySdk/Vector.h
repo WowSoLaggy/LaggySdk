@@ -55,6 +55,14 @@ namespace Sdk
 
       return io_stream;
     }
+
+    friend std::istream& operator>>(std::istream& io_stream, Vector2<T>& o_vector)
+    {
+      read(io_stream, o_vector.x);
+      read(io_stream, o_vector.y);
+
+      return io_stream;
+    }
   };
 
   struct Vector2_hash {
@@ -124,6 +132,15 @@ namespace Sdk
 
       return io_stream;
     }
+
+    friend std::istream& operator>>(std::istream& io_stream, Vector3<T>& o_vector)
+    {
+      read(io_stream, o_vector.x);
+      read(io_stream, o_vector.y);
+      read(io_stream, o_vector.z);
+
+      return io_stream;
+    }
   };
 
 
@@ -178,6 +195,16 @@ namespace Sdk
       write(io_stream, i_vector.y);
       write(io_stream, i_vector.z);
       write(io_stream, i_vector.w);
+
+      return io_stream;
+    }
+
+    friend std::istream& operator>>(std::istream& io_stream, Vector4<T>& o_vector)
+    {
+      read(io_stream, o_vector.x);
+      read(io_stream, o_vector.y);
+      read(io_stream, o_vector.z);
+      read(io_stream, o_vector.w);
 
       return io_stream;
     }
