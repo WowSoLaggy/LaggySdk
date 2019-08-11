@@ -43,6 +43,8 @@ namespace Sdk
 
     Vector2<T> center() const { return (p1 + p2) / 2; }
     Vector2<T> topLeft() const { return { left(), top() }; }
+    Vector2<T> topRight() const { return { right(), top() }; }
+    Vector2<T> bottomLeft() const { return { left(), bottom() }; }
     Vector2<T> bottomRight() const { return { right(), bottom() }; }
     Vector2<T> size() const { return { width(), height() }; }
 
@@ -54,6 +56,31 @@ namespace Sdk
     bool intersectRect(const Rect<T>& i_rect) const
     {
       return !(i_rect.left() > right() || i_rect.right() < left() || i_rect.top() > bottom() || i_rect.bottom() < top());
+    }
+
+    void shrink(T i_value)
+    {
+      if (p1.x < p2.x)
+      {
+        p1.x += i_value;
+        p2.x -= i_value;
+      }
+      else
+      {
+        p1.x -= i_value;
+        p2.x += i_value;
+      }
+
+      if (p1.y < p2.y)
+      {
+        p1.y += i_value;
+        p2.y -= i_value;
+      }
+      else
+      {
+        p1.y -= i_value;
+        p2.y += i_value;
+      }
     }
   };
 
