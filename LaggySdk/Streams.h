@@ -12,9 +12,9 @@ namespace Sdk
   }
 
   template<typename T>
-  std::istream& read(std::istream& io_stream, T& i_value)
+  std::istream& read(std::istream& io_stream, T& o_value)
   {
-    return io_stream.read(reinterpret_cast<char*>(&i_value), sizeof(i_value));
+    return io_stream.read(reinterpret_cast<char*>(&o_value), sizeof(o_value));
   }
 
   static void writeString(std::ostream& io_stream, const std::string& i_string)
