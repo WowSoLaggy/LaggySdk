@@ -24,18 +24,18 @@ namespace Sdk
 
   void EventHandler::disconnectFrom(EventHandler& i_handler)
   {
-    auto removeHandler = [&](EventHandlerRefs& io_eventHandlers)
+    auto removeHandler = [&](EventHandlerRefs& io_eventHandlers, EventHandler& i_handlerToDelete)
     {
       io_eventHandlers.erase(
         std::remove_if(io_eventHandlers.begin(), io_eventHandlers.end(), [&](const EventHandlerRef& i_ref)
       {
-        return &(i_ref.get()) == &i_handler;
+        return &(i_ref.get()) == &i_handlerToDelete;
       }),
         io_eventHandlers.end());
     };
 
-    removeHandler(d_servers);
-    removeHandler(i_handler.d_clients);
+    removeHandler(d_servers, i_handler);
+    removeHandler(i_handler.d_clients, *this);
   }
 
   void EventHandler::disconnectFromAll()
