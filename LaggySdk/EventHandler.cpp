@@ -7,6 +7,7 @@ namespace Sdk
   EventHandler::~EventHandler()
   {
     disconnectFromAll();
+    disconnectAllFromSelf();
   }
 
 
@@ -42,6 +43,12 @@ namespace Sdk
   {
     while (!d_servers.empty())
       disconnectFrom(d_servers.back());
+  }
+
+  void EventHandler::disconnectAllFromSelf()
+  {
+    while (!d_clients.empty())
+      d_clients.front().get().disconnectFrom(*this);
   }
 
 } // ns Sdk

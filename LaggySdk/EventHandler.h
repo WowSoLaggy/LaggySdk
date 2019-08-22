@@ -17,6 +17,7 @@ namespace Sdk
     virtual void connectTo(EventHandler& i_handler) final;
     virtual void disconnectFrom(EventHandler& i_handler) final;
     virtual void disconnectFromAll() final;
+    virtual void disconnectAllFromSelf() final;
 
   private:
 
