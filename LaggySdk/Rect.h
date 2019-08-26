@@ -48,6 +48,12 @@ namespace Sdk
     Vector2<T> bottomRight() const { return { right(), bottom() }; }
     Vector2<T> size() const { return { width(), height() }; }
 
+    void move(const Vector2<T>& i_offset)
+    {
+      p1 += i_offset;
+      p2 += i_offset;
+    }
+
     bool containsPoint(const Vector2<T>& i_point) const
     {
       return left() <= i_point.x && i_point.x <= right() && top() <= i_point.y && i_point.y <= bottom();
