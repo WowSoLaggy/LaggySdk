@@ -56,7 +56,7 @@ namespace Sdk
 
     bool containsPoint(const Vector2<T>& i_point) const
     {
-      return left() <= i_point.x && i_point.x <= right() && top() <= i_point.y && i_point.y <= bottom();
+      return left() <= i_point.x && i_point.x < right() && top() <= i_point.y && i_point.y < bottom();
     }
 
     bool intersectRect(const Rect<T>& i_rect) const
