@@ -10,9 +10,6 @@
     <Filter Include="src\Events">
       <UniqueIdentifier>{caf6a8d3-5f85-4e51-a8c8-9d18e963dbd1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\FileSystem">
-      <UniqueIdentifier>{cccd3a2d-3532-40fe-8e09-65277d573467}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Helpers">
       <UniqueIdentifier>{684350b0-c698-4ea0-b5c4-bf783c784f35}</UniqueIdentifier>
     </Filter>
@@ -40,19 +37,25 @@
     <Filter Include="src\WindowsApi\Window">
       <UniqueIdentifier>{0bd526a7-f03b-43aa-a3e2-bc14d4702139}</UniqueIdentifier>
     </Filter>
+    <Filter Include="libs\dirent">
+      <UniqueIdentifier>{45259b94-c12c-45bb-ac2a-e4453841d312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\jsoncpp">
+      <UniqueIdentifier>{39a471d2-e579-4370-a824-a21021723e8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Streams">
+      <UniqueIdentifier>{315c4be5-1cda-4220-9247-28b594da02ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Locks">
+      <UniqueIdentifier>{bfe5309c-d4b7-42b0-a8cf-e812cdc645fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dirent.h">
-      <Filter>libs</Filter>
-    </ClInclude>
     <ClInclude Include="EventHandler.h">
       <Filter>src\Events</Filter>
     </ClInclude>
     <ClInclude Include="IEvent.h">
       <Filter>src\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="FileSystemUtils.h">
-      <Filter>src\FileSystem</Filter>
     </ClInclude>
     <ClInclude Include="IModelName.h">
       <Filter>src\Helpers</Filter>
@@ -90,9 +93,6 @@
     <ClInclude Include="Random.h">
       <Filter>src\Random</Filter>
     </ClInclude>
-    <ClInclude Include="Rect.h">
-      <Filter>src\Math</Filter>
-    </ClInclude>
     <ClInclude Include="SdkFwd.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -104,9 +104,6 @@
     </ClInclude>
     <ClInclude Include="Timer.h">
       <Filter>src\Timer</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>src\Math</Filter>
     </ClInclude>
     <ClInclude Include="Property.h">
       <Filter>src\Helpers</Filter>
@@ -123,6 +120,30 @@
     <ClInclude Include="Window.h">
       <Filter>src\WindowsApi\Window</Filter>
     </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="dirent.h">
+      <Filter>libs\dirent</Filter>
+    </ClInclude>
+    <ClInclude Include="json.h">
+      <Filter>libs\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="json-forwards.h">
+      <Filter>libs\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Streams.h">
+      <Filter>src\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="ILockable.h">
+      <Filter>src\Locks</Filter>
+    </ClInclude>
+    <ClInclude Include="Locker.h">
+      <Filter>src\Locks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -137,20 +158,20 @@
     <ClCompile Include="Random.cpp">
       <Filter>src\Random</Filter>
     </ClCompile>
-    <ClCompile Include="Rect.cpp">
-      <Filter>src\Math</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector.cpp">
-      <Filter>src\Math</Filter>
     </ClCompile>
     <ClCompile Include="HandleMessages.cpp">
       <Filter>src\WindowsApi\Messages</Filter>
     </ClCompile>
     <ClCompile Include="Window.cpp">
       <Filter>src\WindowsApi\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="jsoncpp.cpp">
+      <Filter>libs\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Locker.cpp">
+      <Filter>src\Locks</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

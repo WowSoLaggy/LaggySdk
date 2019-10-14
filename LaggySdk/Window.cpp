@@ -16,23 +16,12 @@ namespace Sdk
       }
       return DefWindowProc(hWnd, msg, wParam, lParam);
     }
-  }
+  } // Anonymous NS
 
 
-  Window::Window()
-    : d_hWnd(nullptr)
-    , d_hInstance(nullptr)
+  Window::Window(int i_width, int i_height, std::string i_appName)
+    : d_appName(std::move(i_appName))
   {
-  }
-
-
-  void Window::create(int i_width, int i_height, const std::string& i_appName)
-  {
-    if (d_hWnd || d_hInstance)
-      dispose();
-
-    d_appName = i_appName;
-
     // Register win class
 
     d_hInstance = GetModuleHandle(nullptr);
@@ -62,14 +51,12 @@ namespace Sdk
       posX, posY, i_width, i_height, nullptr, nullptr, d_hInstance, nullptr);
   }
 
-  void Window::dispose()
+  Window::~Window()
   {
     DestroyWindow(d_hWnd);
-    d_hWnd = nullptr;
-
     UnregisterClass(d_appName.c_str(), d_hInstance);
-    d_hInstance = nullptr;
   }
+
 
   void Window::show() const
   {

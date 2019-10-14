@@ -4,6 +4,7 @@
 #include <cctype>
 #include <functional>
 #include <iomanip>
+#include <random>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -155,6 +156,24 @@ namespace Sdk
     std::ostringstream out;
     out << std::setprecision(i_precision) << i_value;
     return out.str();
+  }
+
+
+  /// Returns a string of a given @i_length that consists of random chars [0-9, A-Z, a-z]
+  static std::string generateRandomString(int i_length)
+  {
+    static const std::string allowed_chars {"1234567890ABCDFGHJKLMNPQRSTVWXZabcdfghjklmnpqrstvwxz"};
+
+    static thread_local std::default_random_engine randomEngine(std::random_device{}());
+    static thread_local std::uniform_int_distribution<int> randomDistribution(0, (int)allowed_chars.size() - 1);
+
+    std::string id(i_length, '\0');
+
+    for (std::string::value_type& c : id) {
+      c = allowed_chars[randomDistribution(randomEngine)];
+    }
+
+    return id;
   }
 
 } // ns Sdk

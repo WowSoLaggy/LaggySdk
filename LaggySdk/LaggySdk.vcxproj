@@ -139,9 +139,9 @@
     <ClInclude Include="Contracts.h" />
     <ClInclude Include="dirent.h" />
     <ClInclude Include="EventHandler.h" />
-    <ClInclude Include="FileSystemUtils.h" />
     <ClInclude Include="HandleMessages.h" />
     <ClInclude Include="IEvent.h" />
+    <ClInclude Include="ILockable.h" />
     <ClInclude Include="IModelName.h" />
     <ClInclude Include="IPosition3.h" />
     <ClInclude Include="IRotation3.h" />
@@ -150,6 +150,9 @@
     <ClInclude Include="ITextureName.h" />
     <ClInclude Include="IUniqueId.h" />
     <ClInclude Include="IVisibility.h" />
+    <ClInclude Include="json-forwards.h" />
+    <ClInclude Include="json.h" />
+    <ClInclude Include="Locker.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="Property.h" />
@@ -157,6 +160,7 @@
     <ClInclude Include="Rect.h" />
     <ClInclude Include="SdkFwd.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Streams.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector.h" />
@@ -167,15 +171,15 @@
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="HandleMessages.cpp" />
     <ClCompile Include="IUniqueId.cpp" />
+    <ClCompile Include="jsoncpp.cpp" />
+    <ClCompile Include="Locker.cpp" />
     <ClCompile Include="Random.cpp" />
-    <ClCompile Include="Rect.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Vector.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
