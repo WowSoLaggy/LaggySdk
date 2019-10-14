@@ -141,6 +141,7 @@
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="HandleMessages.h" />
     <ClInclude Include="IEvent.h" />
+    <ClInclude Include="ILockable.h" />
     <ClInclude Include="IModelName.h" />
     <ClInclude Include="IPosition3.h" />
     <ClInclude Include="IRotation3.h" />

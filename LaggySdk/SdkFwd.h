@@ -13,4 +13,6 @@ namespace Sdk
 
   class Window;
 
+  class ILockable;
+
 } // ns Sdk
