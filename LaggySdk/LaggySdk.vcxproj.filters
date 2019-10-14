@@ -141,6 +141,9 @@
     <ClInclude Include="ILockable.h">
       <Filter>src\Locks</Filter>
     </ClInclude>
+    <ClInclude Include="Locker.h">
+      <Filter>src\Locks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -166,6 +169,9 @@
     </ClCompile>
     <ClCompile Include="jsoncpp.cpp">
       <Filter>libs\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Locker.cpp">
+      <Filter>src\Locks</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
