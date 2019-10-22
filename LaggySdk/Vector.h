@@ -18,7 +18,7 @@ namespace Sdk
     static Vector2 identity() { return { (T)1, (T)1 }; }
 
     T lengthSq() const { return x * x + y * y; }
-    T length() const { return std::sqrt<T>(lengthSq); }
+    T length() const { return std::sqrt<T>(lengthSq()); }
 
     void normalize()
     {
@@ -156,7 +156,7 @@ namespace Sdk
     static Vector4 identity() { return { (T)1, (T)1, (T)1, (T)1 }; }
 
     T lengthSq() const { return x * x + y * y + z * z + w * w; }
-    T length() const { return std::sqrt<T>(lengthSq); }
+    T length() const { return std::sqrt<T>(lengthSq()); }
 
     void normalize()
     {
