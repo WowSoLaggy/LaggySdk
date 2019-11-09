@@ -182,11 +182,11 @@ namespace Sdk
     void operator-=(const Vector2<T>& i_right) { operator+=(-i_right); }
     
     Vector4<T> operator-() const { return Vector4<T>{ -x, -y, -z, -w }; }
-    Vector4<T> operator+(const Vector4<T>& i_right) { return Vector4<T>{ x + i_right.x, y + i_right.y,
+    Vector4<T> operator+(const Vector4<T>& i_right) const { return Vector4<T>{ x + i_right.x, y + i_right.y,
       z + i_right.z, w + i_right.w }; }
-    Vector4<T> operator-(const Vector4<T>& i_right) { return operator+(-i_right); }
-    Vector4<T> operator*(T i_right) { return Vector4<T>{ x * i_right, y * i_right, z * i_right, w * i_right }; }
-    Vector4<T> operator/(T i_right) { return Vector4<T>{ x / i_right, y / i_right, z / i_right, w / i_right }; }
+    Vector4<T> operator-(const Vector4<T>& i_right) const { return operator+(-i_right); }
+    Vector4<T> operator*(T i_right) const { return Vector4<T>{ x * i_right, y * i_right, z * i_right, w * i_right }; }
+    Vector4<T> operator/(T i_right) const { return Vector4<T>{ x / i_right, y / i_right, z / i_right, w / i_right }; }
 
 
     friend std::ostream& operator<<(std::ostream& io_stream, const Vector4<T>& i_vector)
