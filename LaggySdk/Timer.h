@@ -45,9 +45,9 @@ namespace Sdk
 
   private:
 
-    __int64 d_timeStart;  // Stores start time
-    __int64 d_time;       // Used for calculations
-    __int64 d_freq;       // Stores performance counter frequency, used in calculations
+    __int64 d_timeStart = 0;  // Stores start time
+    __int64 d_time = 0;       // Used for calculations
+    __int64 d_freq = 0;       // Stores performance counter frequency, used in calculations
 
   };
 
