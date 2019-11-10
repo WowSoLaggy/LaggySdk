@@ -47,6 +47,22 @@ namespace Sdk
 
     T dot(const Vector2<T>& i_v) const { return x * i_v.x + y * i_v.y; }
 
+
+    void rotate(double i_angle, Vector2<T> i_origin)
+    {
+      T x1 = x - i_origin.x;
+      T y1 = y - i_origin.y;
+
+      const double cos = std::cos(i_angle);
+      const double sin = std::sin(i_angle);
+
+      x = static_cast<T>(x1 * cos - y1 * sin);
+      y = static_cast<T>(x1 * sin + y1 * cos);
+
+      x = x + i_origin.x;
+      y = y + i_origin.y;
+    }
+
     
     friend std::ostream& operator<<(std::ostream& io_stream, const Vector2<T>& i_vector)
     {
