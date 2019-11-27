@@ -18,7 +18,7 @@ namespace Sdk
     static Vector2 identity() { return { (T)1, (T)1 }; }
 
     T lengthSq() const { return x * x + y * y; }
-    T length() const { return std::sqrt<T>(lengthSq); }
+    T length() const { return std::sqrt<T>(lengthSq()); }
 
     void normalize()
     {
@@ -46,6 +46,22 @@ namespace Sdk
     Vector2<T> operator/(T i_right) const { return Vector2<T>{ x / i_right, y / i_right }; }
 
     T dot(const Vector2<T>& i_v) const { return x * i_v.x + y * i_v.y; }
+
+
+    void rotate(double i_angle, Vector2<T> i_origin)
+    {
+      T x1 = x - i_origin.x;
+      T y1 = y - i_origin.y;
+
+      const double cos = std::cos(i_angle);
+      const double sin = std::sin(i_angle);
+
+      x = static_cast<T>(x1 * cos - y1 * sin);
+      y = static_cast<T>(x1 * sin + y1 * cos);
+
+      x = x + i_origin.x;
+      y = y + i_origin.y;
+    }
 
     
     friend std::ostream& operator<<(std::ostream& io_stream, const Vector2<T>& i_vector)
@@ -156,7 +172,7 @@ namespace Sdk
     static Vector4 identity() { return { (T)1, (T)1, (T)1, (T)1 }; }
 
     T lengthSq() const { return x * x + y * y + z * z + w * w; }
-    T length() const { return std::sqrt<T>(lengthSq); }
+    T length() const { return std::sqrt<T>(lengthSq()); }
 
     void normalize()
     {
@@ -182,11 +198,11 @@ namespace Sdk
     void operator-=(const Vector2<T>& i_right) { operator+=(-i_right); }
     
     Vector4<T> operator-() const { return Vector4<T>{ -x, -y, -z, -w }; }
-    Vector4<T> operator+(const Vector4<T>& i_right) { return Vector4<T>{ x + i_right.x, y + i_right.y,
+    Vector4<T> operator+(const Vector4<T>& i_right) const { return Vector4<T>{ x + i_right.x, y + i_right.y,
       z + i_right.z, w + i_right.w }; }
-    Vector4<T> operator-(const Vector4<T>& i_right) { return operator+(-i_right); }
-    Vector4<T> operator*(T i_right) { return Vector4<T>{ x * i_right, y * i_right, z * i_right, w * i_right }; }
-    Vector4<T> operator/(T i_right) { return Vector4<T>{ x / i_right, y / i_right, z / i_right, w / i_right }; }
+    Vector4<T> operator-(const Vector4<T>& i_right) const { return operator+(-i_right); }
+    Vector4<T> operator*(T i_right) const { return Vector4<T>{ x * i_right, y * i_right, z * i_right, w * i_right }; }
+    Vector4<T> operator/(T i_right) const { return Vector4<T>{ x / i_right, y / i_right, z / i_right, w / i_right }; }
 
 
     friend std::ostream& operator<<(std::ostream& io_stream, const Vector4<T>& i_vector)
