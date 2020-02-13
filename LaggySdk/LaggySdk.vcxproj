@@ -161,6 +161,7 @@
     <ClInclude Include="Random.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="SdkFwd.h" />
+    <ClInclude Include="Size.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Streams.h" />
     <ClInclude Include="StringUtils.h" />

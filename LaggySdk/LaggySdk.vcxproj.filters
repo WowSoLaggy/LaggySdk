@@ -144,6 +144,9 @@
     <ClInclude Include="Locker.h">
       <Filter>src\Locks</Filter>
     </ClInclude>
+    <ClInclude Include="Size.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
