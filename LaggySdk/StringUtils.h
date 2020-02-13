@@ -146,15 +146,14 @@ namespace Sdk
     return std::string(i_wstring.begin(), i_wstring.end());
   }
 
-
-  /// Converts the given @i_value to the string with the given @i_precision
+  /// Converts the given @i_value to the string with the @i_fixed digits after point
   /// \param[in] i_value - value to convert to the string
-  /// \param[in] i_precision - precision to convert the value with
+  /// \param[in] i_fixed - number of fixed digits after point
   template <typename T>
-  std::string toString(const T i_value, const int i_precision = 6)
+  std::string toString(const T i_value, const int i_fixed = 2)
   {
     std::ostringstream out;
-    out << std::setprecision(i_precision) << i_value;
+    out << std::fixed << std::setprecision(i_fixed) << i_value;
     return out.str();
   }
 
