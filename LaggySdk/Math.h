@@ -7,8 +7,9 @@
 
 namespace Sdk
 {
-  const double Pi = 3.14159265358979323846;
-  const double PiHalf = Pi / 2.0;
+  constexpr double Pi = 3.14159265358979323846;
+  constexpr double PiHalf = Pi / 2.0;
+  constexpr double Pi2 = Pi * 2;
 
 
   enum class Quadrant : std::int32_t
