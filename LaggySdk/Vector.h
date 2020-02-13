@@ -18,13 +18,13 @@ namespace Sdk
     static Vector2 identity() { return { (T)1, (T)1 }; }
 
     T lengthSq() const { return x * x + y * y; }
-    T length() const { return std::sqrt<T>(lengthSq()); }
+    T length() const { return std::sqrt(lengthSq()); }
 
     void normalize()
     {
-      T length = length();
-      x /= length;
-      y /= length;
+      T l = length();
+      x /= l;
+      y /= l;
     }
 
     bool operator==(const Vector2<T>& i_right) const { return x == i_right.x && y == i_right.y; }
