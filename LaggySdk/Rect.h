@@ -27,6 +27,12 @@ namespace Sdk
     {
     }
 
+    template <typename U>
+    Rect(Rect<U> i_other)
+      : Rect((T)i_other.left(), (T)i_other.right(), (T)i_other.top(), (T)i_other.bottom())
+    {
+    }
+
     Vector2<T> p1;
     Vector2<T> p2;
 
