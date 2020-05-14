@@ -48,7 +48,7 @@ namespace Sdk
   if (!(x)) throw Sdk::AssertFailedException(); \
 } while (false);
 
-#define CONTRACT_DEREF(x) [&x]() -> auto& { if (x) return *(x); else throw Sdk::DereferenceFailedException(); }();
+#define CONTRACT_DEREF(x) [&x]() -> auto& { if (x) return *(x); else throw Sdk::DereferenceFailedException(); }()
 
 #define CONTRACT_EXPECT(x) do { \
   if (!(x)) throw Sdk::PreconditionFailedException(); \
