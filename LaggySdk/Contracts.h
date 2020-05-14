@@ -14,6 +14,15 @@ namespace Sdk
     }
   };
 
+  class DereferenceFailedException : public std::runtime_error
+  {
+  public:
+    DereferenceFailedException()
+      : std::runtime_error("Dereference failed")
+    {
+    }
+  };
+
   class PreconditionFailedException : public std::runtime_error
   {
   public:
@@ -38,6 +47,8 @@ namespace Sdk
 #define CONTRACT_ASSERT(x) do { \
   if (!(x)) throw Sdk::AssertFailedException(); \
 } while (false);
+
+#define CONTRACT_DEREF(x) [&x]() -> auto& { if (x) return *(x); else throw Sdk::DereferenceFailedException(); }();
 
 #define CONTRACT_EXPECT(x) do { \
   if (!(x)) throw Sdk::PreconditionFailedException(); \
