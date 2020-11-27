@@ -49,6 +49,9 @@
     <Filter Include="src\Locks">
       <UniqueIdentifier>{bfe5309c-d4b7-42b0-a8cf-e812cdc645fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\WindowsApi\Cursor">
+      <UniqueIdentifier>{70d15602-cb25-4218-9c70-fa8360cdd2d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -147,6 +150,9 @@
     <ClInclude Include="Size.h">
       <Filter>src\Math</Filter>
     </ClInclude>
+    <ClInclude Include="Cursor.h">
+      <Filter>src\WindowsApi\Cursor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -175,6 +181,9 @@
     </ClCompile>
     <ClCompile Include="Locker.cpp">
       <Filter>src\Locks</Filter>
+    </ClCompile>
+    <ClCompile Include="Cursor.cpp">
+      <Filter>src\WindowsApi\Cursor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

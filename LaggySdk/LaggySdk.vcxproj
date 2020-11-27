@@ -139,6 +139,7 @@
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="Contracts.h" />
+    <ClInclude Include="Cursor.h" />
     <ClInclude Include="dirent.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="HandleMessages.h" />
@@ -171,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="HandleMessages.cpp" />
     <ClCompile Include="IUniqueId.cpp" />
