@@ -150,6 +150,7 @@
     <ClInclude Include="IRotation3.h" />
     <ClInclude Include="IScale3.h" />
     <ClInclude Include="ISpeed3.h" />
+    <ClInclude Include="ITaggable.h" />
     <ClInclude Include="ITextureName.h" />
     <ClInclude Include="IUniqueId.h" />
     <ClInclude Include="IVisibility.h" />
