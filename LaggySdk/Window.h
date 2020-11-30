@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Vector.h"
+
 #include <string>
 
 
@@ -8,7 +10,7 @@ namespace Sdk
   class Window final
   {
   public:
-    Window(int i_width, int i_height, std::string i_appName);
+    Window(const Vector2I& i_resolution, std::string i_appName);
     ~Window();
 
     HWND getHWnd() const { return d_hWnd; }

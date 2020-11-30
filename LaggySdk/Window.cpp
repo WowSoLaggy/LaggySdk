@@ -19,7 +19,7 @@ namespace Sdk
   } // Anonymous NS
 
 
-  Window::Window(int i_width, int i_height, std::string i_appName)
+  Window::Window(const Vector2I& i_resolution, std::string i_appName)
     : d_appName(std::move(i_appName))
   {
     // Register win class
@@ -44,11 +44,11 @@ namespace Sdk
 
     // Create window
 
-    int posX = (GetSystemMetrics(SM_CXSCREEN) - i_width) / 2;
-    int posY = (GetSystemMetrics(SM_CYSCREEN) - i_height) / 2;
+    int posX = (GetSystemMetrics(SM_CXSCREEN) - i_resolution.x) / 2;
+    int posY = (GetSystemMetrics(SM_CYSCREEN) - i_resolution.y) / 2;
 
     d_hWnd = CreateWindowEx(0, d_appName.c_str(), d_appName.c_str(), WS_POPUP,
-      posX, posY, i_width, i_height, nullptr, nullptr, d_hInstance, nullptr);
+      posX, posY, i_resolution.x, i_resolution.y, nullptr, nullptr, d_hInstance, nullptr);
   }
 
   Window::~Window()
