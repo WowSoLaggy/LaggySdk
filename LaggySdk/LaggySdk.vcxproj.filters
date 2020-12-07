@@ -156,6 +156,9 @@
     <ClInclude Include="ITaggable.h">
       <Filter>src\Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="UniformIntGenerator.h">
+      <Filter>src\Random</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
