@@ -10,6 +10,7 @@
 #include <array>
 #include <chrono>
 #include <cstdint>
+#include <deque>
 #include <filesystem>
 #include <fstream>
 #include <functional>
@@ -20,6 +21,7 @@
 #include <mutex>
 #include <numeric>
 #include <optional>
+#include <queue>
 #include <random>
 #include <regex>
 #include <set>
