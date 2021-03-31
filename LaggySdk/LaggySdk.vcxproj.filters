@@ -52,6 +52,9 @@
     <Filter Include="src\WindowsApi\Cursor">
       <UniqueIdentifier>{70d15602-cb25-4218-9c70-fa8360cdd2d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Geometry">
+      <UniqueIdentifier>{0d01991f-c58a-4604-b282-3b9b9368e7fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -159,6 +162,9 @@
     <ClInclude Include="UniformIntGenerator.h">
       <Filter>src\Random</Filter>
     </ClInclude>
+    <ClInclude Include="Shapes.h">
+      <Filter>src\Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -190,6 +196,9 @@
     </ClCompile>
     <ClCompile Include="Cursor.cpp">
       <Filter>src\WindowsApi\Cursor</Filter>
+    </ClCompile>
+    <ClCompile Include="Shapes.cpp">
+      <Filter>src\Geometry</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
