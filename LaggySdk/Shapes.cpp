@@ -8,19 +8,25 @@ namespace Sdk
 {
   std::vector<Vector2F> getPointsOnCircle(const float i_radius, const int i_numPoints)
   {
-    std::vector<Vector2F> points(i_numPoints);
+    std::vector<Vector2F> points(i_numPoints, { 0.0f, -i_radius });
 
     const double angleDiff = Pi2 / i_numPoints;
-
-    Vector2F point{ 0.0f, -i_radius };
-    points[0] = point;
-    for (int i = 1; i < i_numPoints; ++i)
-    {
-      point.rotate(angleDiff, { 0, 0 });
-      points[i] = point;
-    }
+    for (int i = 0; i < i_numPoints; ++i)
+      points[i].rotate(angleDiff * i, { 0, 0 });
 
     return points;
   }
 
-} // ms Sdk
+  std::vector<Vector2F> getPointsOnCircle(const float i_radius, const int i_numPoints,
+                                          const float i_startAngle, const float i_endAngle)
+  {
+    std::vector<Vector2F> points(i_numPoints, { 0.0f, -i_radius });
+
+    const double angleDiff = (i_endAngle - i_startAngle) / (i_numPoints - 1);
+    for (int i = 0; i < i_numPoints; ++i)
+      points[i].rotate(i_startAngle + angleDiff * i, { 0, 0 });
+
+    return points;
+  }
+
+} // ns Sdk
