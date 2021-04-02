@@ -46,6 +46,14 @@ namespace Sdk
     Vector2<T> operator/(T i_right) const { return Vector2<T>{ x / i_right, y / i_right }; }
 
     T dot(const Vector2<T>& i_v) const { return x * i_v.x + y * i_v.y; }
+    T det(const Vector2<T>& i_v) const { return x * i_v.y - y * i_v.x; }
+
+    double angle(const Vector2<T>& i_v) const
+    {
+      const double dotValue = dot(i_v);
+      const double detValue = det(i_v);
+      return std::atan2(detValue, dotValue);
+    }
 
 
     void rotate(double i_angle, Vector2<T> i_origin)
