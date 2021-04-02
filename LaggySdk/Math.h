@@ -30,13 +30,13 @@ namespace Sdk
 
 
   template <typename T>
-  T getPi()
+  constexpr T getPi()
   {
     return (T)(Pi);
   }
 
   template <typename T>
-  T degToRad(T i_val)
+  constexpr T degToRad(T i_val)
   {
     return i_val * getPi<T>() / 180;
   }
