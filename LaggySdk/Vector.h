@@ -39,11 +39,20 @@ namespace Sdk
 
     Vector2<T> operator-() const { return Vector2<T>{ -x, -y }; }
     Vector2<T> operator+(const Vector2<T>& i_right) const { return Vector2<T>{ x + i_right.x, y + i_right.y }; }
-    Vector2<T> operator-(const Vector2<T>& i_right) const {
-      return operator+(-i_right);
-    }
+    Vector2<T> operator-(const Vector2<T>& i_right) const { return operator+(-i_right); }
     Vector2<T> operator*(T i_right) const { return Vector2<T>{ x * i_right, y * i_right }; }
     Vector2<T> operator/(T i_right) const { return Vector2<T>{ x / i_right, y / i_right }; }
+
+    void operator*=(T i_right)
+    {
+      x *= i_right;
+      y *= i_right;
+    }
+    void operator/=(T i_right)
+    {
+      x /= i_right;
+      y /= i_right;
+    }
 
     T dot(const Vector2<T>& i_v) const { return x * i_v.x + y * i_v.y; }
     T det(const Vector2<T>& i_v) const { return x * i_v.y - y * i_v.x; }
