@@ -55,6 +55,9 @@
     <Filter Include="src\Geometry">
       <UniqueIdentifier>{0d01991f-c58a-4604-b282-3b9b9368e7fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Tree">
+      <UniqueIdentifier>{1a529661-d5e5-4e85-b9f0-d88894cc5ef1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -165,6 +168,9 @@
     <ClInclude Include="Shapes.h">
       <Filter>src\Geometry</Filter>
     </ClInclude>
+    <ClInclude Include="TreeNode.h">
+      <Filter>src\Tree</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -199,6 +205,9 @@
     </ClCompile>
     <ClCompile Include="Shapes.cpp">
       <Filter>src\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeNode.cpp">
+      <Filter>src\Tree</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
