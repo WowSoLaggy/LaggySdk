@@ -244,6 +244,14 @@ namespace Sdk
   };
 
 
+  template <typename T>
+  T normalize(T i_vector)
+  {
+    i_vector.normalize();
+    return i_vector;
+  }
+
+
   using Vector2I = Vector2<int>;
   using Vector3I = Vector3<int>;
   using Vector4I = Vector4<int>;
