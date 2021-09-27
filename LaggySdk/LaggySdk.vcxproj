@@ -175,7 +175,6 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="HandleMessages.cpp" />

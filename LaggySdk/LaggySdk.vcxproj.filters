@@ -176,9 +176,6 @@
     <ClCompile Include="EventHandler.cpp">
       <Filter>src\Events</Filter>
     </ClCompile>
-    <ClCompile Include="Circle.cpp">
-      <Filter>src\Math</Filter>
-    </ClCompile>
     <ClCompile Include="IUniqueId.cpp">
       <Filter>src\Helpers</Filter>
     </ClCompile>

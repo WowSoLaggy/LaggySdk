@@ -5,23 +5,39 @@
 
 namespace Sdk
 {
+  template <typename T>
   class Circle
   {
   public:
+    Circle(const T i_radius, Vector2<T> i_center = Vector2<T>::zero())
+      : d_center(std::move(i_center))
+    {
+      setRadius(i_radius);
+    }
 
-    Circle(float i_radius);
     virtual ~Circle() = default;
 
-    float getRadius() const { return d_radius; }
-    float getRadiusSq() const { return d_radiusSq; }
+    T getRadius() const { return d_radius; }
+    T getRadiusSq() const { return d_radiusSq; }
 
-    void setRadius(float i_radius);
+    const Vector2<T>& getCenter() const { return d_center; }
 
-    bool containsPoint(const Vector2F& i_point) const;
+    void setRadius(const T i_radius)
+    {
+      d_radius = i_radius;
+      d_radiusSq = i_radius * i_radius;
+    }
+
+    bool containsPoint(const Vector2<T>& i_point) const
+    {
+      return i_point.lengthSq() <= d_radiusSq;
+    }
 
   private:
-    float d_radius;
-    float d_radiusSq;
+    T d_radius;
+    T d_radiusSq;
+
+    Vector2<T> d_center;
   };
 
 } // ns Sdk
