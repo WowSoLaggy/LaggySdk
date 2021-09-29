@@ -2,8 +2,6 @@
 
 namespace Sdk
 {
-  class Circle;
-
   class IEvent;
   class EventHandler;
 
