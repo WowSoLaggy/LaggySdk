@@ -68,4 +68,14 @@ namespace Sdk
     }
   }
 
+  template <typename T>
+  T clamp(const T i_val, const T i_min, const T i_max)
+  {
+    if (i_val < i_min)
+      return i_min;
+    if (i_val > i_max)
+      return i_max;
+    return i_val;
+  }
+
 } // ns Sdk
