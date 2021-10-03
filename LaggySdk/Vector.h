@@ -27,6 +27,9 @@ namespace Sdk
       y /= l;
     }
 
+    bool isZero(const T i_tolerance) const { return lengthSq() < i_tolerance * i_tolerance; }
+    bool isNotZero(const T i_tolerance) const { return !isZero(i_tolerance); }
+
     bool operator==(const Vector2<T>& i_right) const { return x == i_right.x && y == i_right.y; }
     bool operator!=(const Vector2<T>& i_right) const { return !operator==(i_right); }
 
@@ -128,6 +131,9 @@ namespace Sdk
       y /= l;
       z /= l;
     }
+
+    bool isZero(const T i_tolerance) const { return lengthSq() < i_tolerance * i_tolerance; }
+    bool isNotZero(const T i_tolerance) const { return !isZero(i_tolerance); }
 
     bool operator==(const Vector3<T>& i_right) const { return x == i_right.x && y == i_right.y && z == i_right.z; }
     bool operator!=(const Vector3<T>& i_right) const { return !operator==(i_right); }
