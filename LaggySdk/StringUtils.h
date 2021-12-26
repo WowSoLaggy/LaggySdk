@@ -143,7 +143,9 @@ namespace Sdk
   /// [in] const std::wstring& i_wstring - string to convert
   static std::string getString(const std::wstring& i_wstring)
   {
-    return std::string(i_wstring.begin(), i_wstring.end());
+    std::string str(i_wstring.length(), 0);
+    std::transform(i_wstring.cbegin(), i_wstring.cend(), str.begin(), [](wchar_t c) { return (char)c; });
+    return str;
   }
 
   /// Converts the given @i_value to the string with the @i_fixed digits after point
