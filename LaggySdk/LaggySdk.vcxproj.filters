@@ -58,6 +58,9 @@
     <Filter Include="src\Tree">
       <UniqueIdentifier>{1a529661-d5e5-4e85-b9f0-d88894cc5ef1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\StateMachine">
+      <UniqueIdentifier>{dfe32551-fd24-4890-b115-a78524c8439e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -171,6 +174,15 @@
     <ClInclude Include="TreeNode.h">
       <Filter>src\Tree</Filter>
     </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>src\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="IState.h">
+      <Filter>src\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="ITransition.h">
+      <Filter>src\StateMachine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -205,6 +217,9 @@
     </ClCompile>
     <ClCompile Include="TreeNode.cpp">
       <Filter>src\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>src\StateMachine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

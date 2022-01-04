@@ -154,8 +154,10 @@
     <ClInclude Include="IRotation3.h" />
     <ClInclude Include="IScale3.h" />
     <ClInclude Include="ISpeed3.h" />
+    <ClInclude Include="IState.h" />
     <ClInclude Include="ITaggable.h" />
     <ClInclude Include="ITextureName.h" />
+    <ClInclude Include="ITransition.h" />
     <ClInclude Include="IUniqueId.h" />
     <ClInclude Include="IVisibility.h" />
     <ClInclude Include="json-forwards.h" />
@@ -169,6 +171,7 @@
     <ClInclude Include="SdkFwd.h" />
     <ClInclude Include="Shapes.h" />
     <ClInclude Include="Size.h" />
+    <ClInclude Include="StateMachine.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Streams.h" />
     <ClInclude Include="StringUtils.h" />
@@ -187,6 +190,7 @@
     <ClCompile Include="Locker.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Shapes.cpp" />
+    <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

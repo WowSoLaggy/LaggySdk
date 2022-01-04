@@ -13,4 +13,7 @@ namespace Sdk
 
   class ILockable;
 
+  class IState;
+  class ITransition;
+
 } // ns Sdk
