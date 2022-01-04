@@ -94,6 +94,13 @@ namespace Sdk
         p2.y += i_value;
       }
     }
+
+    template <typename V>
+    Rect<V> getRect()
+    {
+      return Rect<V>(p1.getVector<V>(), p2.getVector<V>());
+    }
+
   };
 
   using RectI = Rect<int>;

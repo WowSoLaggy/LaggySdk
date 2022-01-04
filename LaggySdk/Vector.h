@@ -83,6 +83,13 @@ namespace Sdk
       y = y + i_origin.y;
     }
 
+
+    template <typename V>
+    Vector2<V> getVector()
+    {
+      return { (V)x, (V)y };
+    }
+
     
     friend std::ostream& operator<<(std::ostream& io_stream, const Vector2<T>& i_vector)
     {
@@ -163,6 +170,13 @@ namespace Sdk
     }
 
 
+    template <typename V>
+    Vector3<V> getVector()
+    {
+      return { (V)x, (V)y, (V)z };
+    }
+
+
     friend std::ostream& operator<<(std::ostream& io_stream, const Vector3<T>& i_vector)
     {
       write(io_stream, i_vector.x);
@@ -226,6 +240,13 @@ namespace Sdk
     Vector4<T> operator-(const Vector4<T>& i_right) const { return operator+(-i_right); }
     Vector4<T> operator*(T i_right) const { return Vector4<T>{ x * i_right, y * i_right, z * i_right, w * i_right }; }
     Vector4<T> operator/(T i_right) const { return Vector4<T>{ x / i_right, y / i_right, z / i_right, w / i_right }; }
+
+
+    template <typename V>
+    Vector4<V> getVector()
+    {
+      return { (V)x, (V)y, (V)z, (V)w };
+    }
 
 
     friend std::ostream& operator<<(std::ostream& io_stream, const Vector4<T>& i_vector)
