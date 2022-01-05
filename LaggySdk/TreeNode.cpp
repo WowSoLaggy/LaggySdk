@@ -39,4 +39,10 @@ namespace Sdk
       d_children.erase(it);
   }
 
+  void TreeNode::removeChildren()
+  {
+    while (!d_children.empty())
+      removeChild(*d_children.front());
+  }
+
 } // ns Sdk

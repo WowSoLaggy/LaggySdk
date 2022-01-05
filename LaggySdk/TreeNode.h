@@ -18,6 +18,7 @@ namespace Sdk
 
     virtual void addChild(std::shared_ptr<TreeNode> i_child);
     virtual void removeChild(TreeNode& i_child);
+    virtual void removeChildren();
 
   private:
     TreeNode* d_parent = nullptr;
