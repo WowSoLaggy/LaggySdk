@@ -146,6 +146,7 @@
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="dirent.h" />
     <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="Files.h" />
     <ClInclude Include="HandleMessages.h" />
     <ClInclude Include="IEvent.h" />
     <ClInclude Include="ILockable.h" />
