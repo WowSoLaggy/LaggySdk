@@ -166,6 +166,7 @@
     <ClInclude Include="Locker.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Message.h" />
+    <ClInclude Include="PairHash.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Rect.h" />
