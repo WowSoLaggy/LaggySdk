@@ -78,4 +78,10 @@ namespace Sdk
     return i_val;
   }
 
+  template <typename T>
+  T sign(const T i_value)
+  {
+    return i_value < 0 ? T(-1) : T(1);
+  }
+
 } // ns Sdk
