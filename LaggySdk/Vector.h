@@ -169,6 +169,15 @@ namespace Sdk
       };
     }
 
+    Vector3<T> operator*(const Vector3<T>& i_v) const
+    {
+      return {
+        x * i_v.x,
+        y * i_v.y,
+        z * i_v.z
+      };
+    }
+
 
     template <typename V>
     Vector3<V> getVector()
