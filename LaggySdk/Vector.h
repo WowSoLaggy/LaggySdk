@@ -85,7 +85,7 @@ namespace Sdk
 
 
     template <typename V>
-    Vector2<V> getVector()
+    Vector2<V> getVector() const
     {
       return { (V)x, (V)y };
     }
@@ -180,7 +180,7 @@ namespace Sdk
 
 
     template <typename V>
-    Vector3<V> getVector()
+    Vector3<V> getVector() const
     {
       return { (V)x, (V)y, (V)z };
     }
