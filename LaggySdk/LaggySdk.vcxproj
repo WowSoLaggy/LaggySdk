@@ -169,6 +169,7 @@
     <ClInclude Include="PairHash.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="Random.h" />
+    <ClInclude Include="Ray.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="SdkFwd.h" />
     <ClInclude Include="Shapes.h" />
