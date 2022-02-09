@@ -27,6 +27,12 @@ namespace Sdk
       y /= l;
     }
 
+    void inverse()
+    {
+      x = (T)1 / x;
+      y = (T)1 / y;
+    }
+
     bool isZero(const T i_tolerance) const { return lengthSq() < i_tolerance * i_tolerance; }
     bool isNotZero(const T i_tolerance) const { return !isZero(i_tolerance); }
 
@@ -139,6 +145,13 @@ namespace Sdk
       z /= l;
     }
 
+    void inverse()
+    {
+      x = (T)1 / x;
+      y = (T)1 / y;
+      z = (T)1 / z;
+    }
+
     bool isZero(const T i_tolerance) const { return lengthSq() < i_tolerance * i_tolerance; }
     bool isNotZero(const T i_tolerance) const { return !isZero(i_tolerance); }
 
@@ -227,6 +240,14 @@ namespace Sdk
       y /= length;
       z /= length;
       w /= length;
+    }
+
+    void inverse()
+    {
+      x = (T)1 / x;
+      y = (T)1 / y;
+      z = (T)1 / z;
+      w = (T)1 / w;
     }
 
     bool operator==(const Vector4<T>& i_right) const { return
