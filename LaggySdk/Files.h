@@ -18,4 +18,30 @@ namespace Sdk
     return buffer;
   }
 
+  static fs::path getExePath()
+  {
+#ifdef _WIN32
+    wchar_t path[MAX_PATH] = { 0 };
+    GetModuleFileNameW(NULL, path, MAX_PATH);
+    return path;
+#else
+    char result[PATH_MAX];
+    ssize_t count = readlink("/proc/self/exe", result, PATH_MAX);
+    return std::string(result, (count > 0) ? count : 0);
+#endif
+  }
+
+  static fs::path getExeFolder()
+  {
+#ifdef _WIN32
+    wchar_t path[MAX_PATH] = { 0 };
+    GetModuleFileNameW(NULL, path, MAX_PATH);
+    return fs::path(path).parent_path();
+#else
+    char result[PATH_MAX];
+    ssize_t count = readlink("/proc/self/exe", result, PATH_MAX);
+    return std::string(result, (count > 0) ? count : 0);
+#endif
+  }
+
 } // ns Sdk
