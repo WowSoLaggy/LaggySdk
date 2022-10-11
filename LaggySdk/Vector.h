@@ -173,6 +173,14 @@ namespace Sdk
     Vector3<T> operator*(T i_right) const { return Vector3<T>{ x * i_right, y * i_right, z * i_right }; }
     Vector3<T> operator/(T i_right) const { return Vector3<T>{ x / i_right, y / i_right, z / i_right }; }
 
+    T dot(const Vector3<T>& i_v) const
+    {
+      return
+        x * i_v.x +
+        y * i_v.y +
+        z * i_v.z;
+    }
+
     Vector3<T> cross(const Vector3<T>& i_v) const
     {
       return {
