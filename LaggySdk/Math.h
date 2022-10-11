@@ -38,7 +38,13 @@ namespace Sdk
   template <typename T>
   constexpr T degToRad(T i_val)
   {
-    return i_val * getPi<T>() / 180;
+    return i_val * getPi<T>() / (T)180;
+  }
+
+  template <typename T>
+  constexpr T radToDeg(T i_val)
+  {
+    return i_val * (T)180 / getPi<T>();
   }
 
 
