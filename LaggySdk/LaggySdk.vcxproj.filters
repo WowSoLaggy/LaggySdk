@@ -198,6 +198,9 @@
     <ClInclude Include="Ray.h">
       <Filter>src\Math</Filter>
     </ClInclude>
+    <ClInclude Include="FpsCounter.h">
+      <Filter>src\Timers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -237,6 +240,9 @@
       <Filter>src\StateMachine</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
+      <Filter>src\Timers</Filter>
+    </ClCompile>
+    <ClCompile Include="FpsCounter.cpp">
       <Filter>src\Timers</Filter>
     </ClCompile>
   </ItemGroup>

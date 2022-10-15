@@ -147,6 +147,7 @@
     <ClInclude Include="dirent.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Files.h" />
+    <ClInclude Include="FpsCounter.h" />
     <ClInclude Include="HandleMessages.h" />
     <ClInclude Include="IEvent.h" />
     <ClInclude Include="ILockable.h" />
@@ -187,6 +188,7 @@
   <ItemGroup>
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="FpsCounter.cpp" />
     <ClCompile Include="HandleMessages.cpp" />
     <ClCompile Include="IUniqueId.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
