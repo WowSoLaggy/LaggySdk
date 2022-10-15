@@ -22,9 +22,6 @@
     <Filter Include="src\Strings">
       <UniqueIdentifier>{36d4b161-ee77-4b4b-9260-89a943be4c5e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Timer">
-      <UniqueIdentifier>{d5b5d551-3e88-466e-9599-76a6c43f51ba}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Contracts">
       <UniqueIdentifier>{10ce0c4b-7de4-4835-9d27-14f951c403b9}</UniqueIdentifier>
     </Filter>
@@ -66,6 +63,9 @@
     </Filter>
     <Filter Include="src\Hash">
       <UniqueIdentifier>{b7498351-b723-4628-b0a8-ac26c654b42c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Timers">
+      <UniqueIdentifier>{d5b5d551-3e88-466e-9599-76a6c43f51ba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -121,7 +121,7 @@
       <Filter>src\Strings</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>src\Timer</Filter>
+      <Filter>src\Timers</Filter>
     </ClInclude>
     <ClInclude Include="Property.h">
       <Filter>src\Helpers</Filter>
@@ -235,6 +235,9 @@
     </ClCompile>
     <ClCompile Include="StateMachine.cpp">
       <Filter>src\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>src\Timers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

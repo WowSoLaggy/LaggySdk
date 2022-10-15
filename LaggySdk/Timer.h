@@ -7,46 +7,22 @@ namespace Sdk
   class Timer
   {
   public:
-
-
     // Default ctor with the system performance counter frequency check
-    Timer()
-    {
-      QueryPerformanceFrequency((LARGE_INTEGER*)&d_freq);
-    }
-
-    // Default dtor
-    virtual ~Timer() = default;
-
+    Timer();
 
     // Starts the new timer
-    void start()
-    {
-      QueryPerformanceCounter((LARGE_INTEGER*)&d_timeStart);
-    }
+    void start();
 
     // Returns the time elapsed since the timer start, the timer doesn't stop
-    double check()
-    {
-      QueryPerformanceCounter((LARGE_INTEGER*)&d_time);
-      return (double)(d_time - d_timeStart) / (double)d_freq;
-    }
+    double check() const;
 
     // Returns the time elapsed since the timer start and restarts the timer
-    double restart()
-    {
-      QueryPerformanceCounter((LARGE_INTEGER*)&d_time);
-      double dt = (double)(d_time - d_timeStart) / (double)d_freq;
-      d_timeStart = d_time;
-      return dt;
-    }
+    double restart();
 
   private:
-
     __int64 d_timeStart = 0;  // Stores start time
     __int64 d_time = 0;       // Used for calculations
     __int64 d_freq = 0;       // Stores performance counter frequency, used in calculations
-
   };
 
 } // ns Sdk
