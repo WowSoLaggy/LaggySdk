@@ -149,6 +149,7 @@
     <ClInclude Include="Files.h" />
     <ClInclude Include="FpsCounter.h" />
     <ClInclude Include="HandleMessages.h" />
+    <ClInclude Include="HandleResult.h" />
     <ClInclude Include="IEvent.h" />
     <ClInclude Include="ILockable.h" />
     <ClInclude Include="IModelName.h" />
@@ -167,6 +168,7 @@
     <ClInclude Include="Locker.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Message.h" />
+    <ClInclude Include="MessageCodeUtils.h" />
     <ClInclude Include="PairHash.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="Random.h" />
@@ -193,6 +195,7 @@
     <ClCompile Include="IUniqueId.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
     <ClCompile Include="Locker.cpp" />
+    <ClCompile Include="MessageCodeUtils.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Shapes.cpp" />
     <ClCompile Include="StateMachine.cpp" />

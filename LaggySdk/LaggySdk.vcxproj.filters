@@ -201,6 +201,12 @@
     <ClInclude Include="FpsCounter.h">
       <Filter>src\Timers</Filter>
     </ClInclude>
+    <ClInclude Include="MessageCodeUtils.h">
+      <Filter>src\WindowsApi\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleResult.h">
+      <Filter>src\WindowsApi\Messages</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -244,6 +250,9 @@
     </ClCompile>
     <ClCompile Include="FpsCounter.cpp">
       <Filter>src\Timers</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageCodeUtils.cpp">
+      <Filter>src\WindowsApi\Messages</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

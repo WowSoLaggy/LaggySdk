@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "Window.h"
 
+#include "Contracts.h"
+#include "MessageCodeUtils.h"
+
 
 namespace Sdk
 {
@@ -13,9 +16,20 @@ namespace Sdk
       case WM_DESTROY:
         PostQuitMessage(0);
         return 0;
+
+      case WM_ACTIVATE:
+      case WM_ACTIVATEAPP:
+      case WM_SETFOCUS:
+      case WM_KILLFOCUS:
+        // These events shall be handled in our app, but are sent directly to the window -
+        // redirect them to the message queue
+        PostMessage(hWnd, msg, wParam, lParam);
+        return 0;
       }
+
       return DefWindowProc(hWnd, msg, wParam, lParam);
     }
+
   } // Anonymous NS
 
 
@@ -49,6 +63,7 @@ namespace Sdk
 
     d_hWnd = CreateWindowEx(0, d_appName.c_str(), d_appName.c_str(), WS_POPUP,
       posX, posY, i_resolution.x, i_resolution.y, nullptr, nullptr, d_hInstance, nullptr);
+    CONTRACT_ASSERT(d_hWnd);
   }
 
   Window::~Window()
