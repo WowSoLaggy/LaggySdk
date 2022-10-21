@@ -1,152 +1,80 @@
 #pragma once
 
-#include <algorithm>
-#include <cctype>
-#include <functional>
-#include <iomanip>
-#include <random>
-#include <sstream>
-#include <string>
-#include <vector>
-
-
 namespace Sdk
 {
   /// Trims the given string from the start (removes all spaces)
   /// Params:
-  /// [out] std::string & pString	- string to trim
-  static inline void trimStringLeadRef(std::string &pString)
-  {
-    pString.erase(pString.begin(), std::find_if(pString.begin(), pString.end(),
-                                                [](int c) { return !std::isspace(c); }));
-  }
+  /// [out] std::string& io_string - string to trim
+  void trimStringLeadRef(std::string& io_string);
 
   /// Trims the given string from the end (removes all spaces)
   /// Params:
-  /// [out] std::string & pString	- string to trim
-  static inline void trimStringTrailRef(std::string &pString)
-  {
-    pString.erase(std::find_if(pString.rbegin(), pString.rend(),
-                               [](int c) { return !std::isspace(c); }).base(), pString.end());
-  }
+  /// [out] std::string& io_string - string to trim
+  void trimStringTrailRef(std::string& io_string);
 
   /// Trims the given string (removes all spaces)
   /// Params:
-  /// [out] std::string & pString	- string to trim
-  static inline void trimStringRef(std::string &pString)
-  {
-    trimStringLeadRef(pString);
-    trimStringTrailRef(pString);
-  }
+  /// [out] std::string& io_string - string to trim
+  void trimStringRef(std::string& io_string);
 
   /// Trims the given string from the start (removes all spaces)
   /// Params:
-  /// [out] std::string pString	- string to trim
-  static inline std::string trimStringLead(std::string pString)
-  {
-    trimStringLeadRef(pString);
-    return pString;
-  }
+  /// [out] std::string i_string - string to trim
+  std::string trimStringLead(std::string i_string);
 
   /// Trims the given string from the end (removes all spaces)
   /// Params:
-  /// [out] std::string pString	- string to trim
-  static inline std::string trimStringTrail(std::string pString)
-  {
-    trimStringTrailRef(pString);
-    return pString;
-  }
+  /// [out] std::string i_string - string to trim
+  std::string trimStringTrail(std::string i_string);
 
   /// Trims the given string (removes all spaces)
   /// Params:
-  /// [out] std::string pString	- string to trim
-  static inline std::string trimString(std::string pString)
-  {
-    trimStringRef(pString);
-    return pString;
-  }
+  /// [out] std::string i_string - string to trim
+  std::string trimString(std::string i_string);
 
 
   /// Splits the given string to tokens with a given delimiter
   /// Params:
-  /// [in]  const std::string & pString		- string to split
-  /// [in]  char pDelimiter					- delimiter used to split the given string
-  /// [out] std::vector<std::string> & pTokens	- vector of splitted tokens
+  /// [in]  const std::string& i_string         - string to split
+  /// [in]  char i_delimiter                    - delimiter used to split the given string
+  /// [out] std::vector<std::string>& io_tokens - vector of splitted tokens
   /// Returns:
-  /// std::vector<std::string>					- vector of splitted tokens (reference to pTokens)
-  static std::vector<std::string> & splitString(const std::string &pString, char pDelimiter, std::vector<std::string> &pTokens, bool pTrimTokens = false)
-  {
-    std::stringstream ss(pString);
-    std::string item;
-    if (pTrimTokens)
-    {
-      while (std::getline(ss, item, pDelimiter))
-        pTokens.push_back(trimString(item));
-    }
-    else
-    {
-      while (std::getline(ss, item, pDelimiter))
-        pTokens.push_back(item);
-    }
-
-    return pTokens;
-  }
+  /// std::vector<std::string>                  - vector of splitted tokens (reference to pTokens)
+  std::vector<std::string>& splitString(
+    const std::string& i_string, char i_delimiter, std::vector<std::string>& io_tokens, bool i_trimTokens = false);
 
 
   /// Splits the given string to tokens with a given delimiter
   /// Params:
-  /// [in] const std::string & pString	- string to split
-  /// [in] char pDelimiter				- delimiter used to split the given string
+  /// [in] const std::string& i_string  - string to split
+  /// [in] char i_delimiter             - delimiter used to split the given string
   /// Returns:
-  /// std::vector<std::string>				- vector of splitted tokens
-  static std::vector<std::string> splitString(const std::string &pString, char pDelimiter, bool pTrimTokens = false)
-  {
-    std::vector<std::string> tokens;
-    return splitString(pString, pDelimiter, tokens, pTrimTokens);
-  }
+  /// std::vector<std::string>          - vector of splitted tokens
+  std::vector<std::string> splitString(const std::string& i_string, char i_delimiter, bool i_trimTokens = false);
 
 
   /// Converts the given string to the boolean value
   /// Params:
-  /// [in] const std::string & pString	- string to convert
-  static bool stringToBool(const std::string &pString)
-  {
-    std::string str = pString;
-    std::transform(str.begin(), str.end(), str.begin(), ::tolower);
-    return (str.compare("true") == 0) || (str.compare("1") == 0);
-  }
+  /// [in] const std::string& i_string - string to convert
+  bool stringToBool(std::string i_string);
 
 
   /// Check whether the input string is a number (can be parsed to)
   /// Params:
-  /// [in] const std::string & pString - input string to be checked
-  static bool isNumber(const std::string &pString)
-  {
-    return (
-      (!pString.empty()) &&
-      (std::find_if(pString.begin(), pString.end(),
-        [](char c) { return !std::isdigit(c); }) == pString.end())
-      );
-  }
+  /// [in] const std::string& i_string - input string to be checked
+  bool isNumber(const std::string& i_string);
 
 
   /// Converts string to wstring
   /// Params:
   /// [in] const std::string& i_string - string to convert
-  static std::wstring getWString(const std::string& i_string)
-  {
-    return std::wstring(i_string.begin(), i_string.end());
-  }
+  std::wstring s2ws(const std::string& i_string);
 
   /// Converts wstring to string
   /// Params:
   /// [in] const std::wstring& i_wstring - string to convert
-  static std::string getString(const std::wstring& i_wstring)
-  {
-    std::string str(i_wstring.length(), 0);
-    std::transform(i_wstring.cbegin(), i_wstring.cend(), str.begin(), [](wchar_t c) { return (char)c; });
-    return str;
-  }
+  std::string ws2s(const std::wstring& i_wstring);
+
 
   /// Converts the given @i_value to the string with the @i_fixed digits after point
   /// \param[in] i_value - value to convert to the string
@@ -161,20 +89,6 @@ namespace Sdk
 
 
   /// Returns a string of a given @i_length that consists of random chars [0-9, A-Z, a-z]
-  static std::string generateRandomString(int i_length)
-  {
-    static const std::string allowed_chars {"1234567890ABCDFGHJKLMNPQRSTVWXZabcdfghjklmnpqrstvwxz"};
-
-    static thread_local std::default_random_engine randomEngine(std::random_device{}());
-    static thread_local std::uniform_int_distribution<int> randomDistribution(0, (int)allowed_chars.size() - 1);
-
-    std::string id(i_length, '\0');
-
-    for (std::string::value_type& c : id) {
-      c = allowed_chars[randomDistribution(randomEngine)];
-    }
-
-    return id;
-  }
+  std::string generateRandomString(int i_length);
 
 } // ns Sdk
