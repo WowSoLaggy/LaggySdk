@@ -74,6 +74,18 @@ namespace Sdk
     }
 
 
+    void rotate(double i_angle)
+    {
+      const double cos = std::cos(i_angle);
+      const double sin = std::sin(i_angle);
+
+      const auto xRotated = static_cast<T>(x * cos - y * sin);
+      const auto yRotated = static_cast<T>(x * sin + y * cos);
+
+      x = xRotated;
+      y = yRotated;
+    }
+
     void rotate(double i_angle, Vector2<T> i_origin)
     {
       T x1 = x - i_origin.x;
