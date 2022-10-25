@@ -70,37 +70,44 @@ namespace Sdk
       return !(i_rect.left() > right() || i_rect.right() < left() || i_rect.top() > bottom() || i_rect.bottom() < top());
     }
 
-    void shrink(T i_value)
+    template <typename V>
+    void expand(V i_value)
     {
       if (p1.x < p2.x)
-      {
-        p1.x += i_value;
-        p2.x -= i_value;
-      }
-      else
       {
         p1.x -= i_value;
         p2.x += i_value;
       }
+      else
+      {
+        p1.x += i_value;
+        p2.x -= i_value;
+      }
 
       if (p1.y < p2.y)
-      {
-        p1.y += i_value;
-        p2.y -= i_value;
-      }
-      else
       {
         p1.y -= i_value;
         p2.y += i_value;
       }
+      else
+      {
+        p1.y += i_value;
+        p2.y -= i_value;
+      }
     }
+
+    template <typename V>
+    void shrink(V i_value)
+    {
+      expand(-i_value);
+    }
+
 
     template <typename V>
     Rect<V> getRect()
     {
       return Rect<V>(p1.getVector<V>(), p2.getVector<V>());
     }
-
   };
 
   using RectI = Rect<int>;
