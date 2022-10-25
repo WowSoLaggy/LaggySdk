@@ -103,12 +103,28 @@ namespace Sdk
     }
 
 
+    Rect addRect(const Rect& i_other) const
+    {
+      return Rect(
+        std::min(this->left(), i_other.left()),
+        std::max(this->right(), i_other.right()),
+        std::min(this->top(), i_other.top()),
+        std::max(this->bottom(), i_other.bottom())
+        );
+    }
+
     template <typename V>
     Rect<V> getRect()
     {
       return Rect<V>(p1.getVector<V>(), p2.getVector<V>());
     }
   };
+
+  template <typename T>
+  Rect<T> addRects(const Rect<T>& i_left, const Rect<T>& i_right)
+  {
+    return i_left.addRect(i_right);
+  }
 
   using RectI = Rect<int>;
   using RectF = Rect<float>;
