@@ -293,7 +293,7 @@ namespace Sdk
 
 
     template <typename V>
-    Vector4<V> getVector()
+    Vector4<V> getVector() const
     {
       return { (V)x, (V)y, (V)z, (V)w };
     }
