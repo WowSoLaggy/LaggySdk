@@ -167,6 +167,12 @@ namespace Sdk
     bool isZero(const T i_tolerance) const { return lengthSq() < i_tolerance * i_tolerance; }
     bool isNotZero(const T i_tolerance) const { return !isZero(i_tolerance); }
 
+    Vector3<T>& operator=(Vector3<T> i_other)
+    {
+      swap(*this, i_other);
+      return *this;
+    }
+
     bool operator==(const Vector3<T>& i_right) const { return x == i_right.x && y == i_right.y && z == i_right.z; }
     bool operator!=(const Vector3<T>& i_right) const { return !operator==(i_right); }
 
@@ -182,8 +188,15 @@ namespace Sdk
     Vector3<T> operator+(const Vector3<T>& i_right) const { return Vector3<T>{ x + i_right.x, y + i_right.y,
       z + i_right.z }; }
     Vector3<T> operator-(const Vector3<T>& i_right) const { return operator+(-i_right); }
-    Vector3<T> operator*(T i_right) const { return Vector3<T>{ x * i_right, y * i_right, z * i_right }; }
-    Vector3<T> operator/(T i_right) const { return Vector3<T>{ x / i_right, y / i_right, z / i_right }; }
+
+    template <typename V>
+    Vector3<T> operator*(V i_right) const { return Vector3<T>{ x * i_right, y * i_right, z * i_right }; }
+    template <typename V>
+    Vector3<T> operator/(V i_right) const { return Vector3<T>{ x / i_right, y / i_right, z / i_right }; }
+    template <typename V>
+    void operator*=(V i_right) { *this = *this * i_right; }
+    template <typename V>
+    void operator/=(V i_right) { *this = *this / i_right; }
 
     T dot(const Vector3<T>& i_v) const
     {
@@ -216,6 +229,14 @@ namespace Sdk
     Vector3<V> getVector() const
     {
       return { (V)x, (V)y, (V)z };
+    }
+
+
+    friend void swap(Vector3<T>& i_lhv, Vector3<T>& i_rhv) noexcept
+    {
+      std::swap(i_lhv.x, i_rhv.x);
+      std::swap(i_lhv.y, i_rhv.y);
+      std::swap(i_lhv.z, i_rhv.z);
     }
 
 
