@@ -67,6 +67,9 @@
     <Filter Include="src\Timers">
       <UniqueIdentifier>{d5b5d551-3e88-466e-9599-76a6c43f51ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Vectors">
+      <UniqueIdentifier>{7688cff5-0d71-41a8-8e39-37235b1b96d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -206,6 +209,9 @@
     </ClInclude>
     <ClInclude Include="HandleResult.h">
       <Filter>src\WindowsApi\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorUtils.h">
+      <Filter>src\Vectors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
