@@ -85,6 +85,12 @@ namespace Sdk
   }
 
   template <typename T>
+  T saturate(const T i_val)
+  {
+    return clamp<T>(i_val, (T)0, (T)1);
+  }
+
+  template <typename T>
   T sign(const T i_value)
   {
     return i_value < 0 ? T(-1) : T(1);
