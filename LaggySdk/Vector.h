@@ -349,6 +349,12 @@ namespace Sdk
     return i_vector;
   }
 
+  template <typename T>
+  T cross(const T& i_v1, const T& i_v2)
+  {
+    return i_v1.cross(i_v2);
+  }
+
 
   using Vector2I = Vector2<int>;
   using Vector3I = Vector3<int>;
