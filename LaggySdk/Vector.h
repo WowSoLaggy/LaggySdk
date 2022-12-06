@@ -182,7 +182,7 @@ namespace Sdk
       y += i_right.y;
       z += i_right.z;
     }
-    void operator-=(const Vector2<T>& i_right) { operator+=(-i_right); }
+    void operator-=(const Vector3<T>& i_right) { operator+=(-i_right); }
 
     Vector3<T> operator-() const { return Vector3<T>{ -x, -y, -z }; }
     Vector3<T> operator+(const Vector3<T>& i_right) const { return Vector3<T>{ x + i_right.x, y + i_right.y,
