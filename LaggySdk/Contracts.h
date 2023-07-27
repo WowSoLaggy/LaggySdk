@@ -44,16 +44,17 @@ namespace Sdk
 } // ns Sdk
 
 
-#define CONTRACT_ASSERT(x) do { \
-  if (!(x)) throw Sdk::AssertFailedException(); \
+#define CONTRACT_ASSERT(condition) do { \
+  if (!(condition)) throw Sdk::AssertFailedException(); \
 } while (false);
 
-#define CONTRACT_DEREF(x) [&x]() -> auto& { if (x) return *(x); else throw Sdk::DereferenceFailedException(); }()
-
-#define CONTRACT_EXPECT(x) do { \
-  if (!(x)) throw Sdk::PreconditionFailedException(); \
+#define CONTRACT_EXPECT(condition) do { \
+  if (!(condition)) throw Sdk::PreconditionFailedException(); \
 } while (false);
 
-#define CONTRACT_ENSURE(x) do { \
-  if (!(x)) throw Sdk::PostconditionFailedException(); \
+#define CONTRACT_ENSURE(condition) do { \
+  if (!(condition)) throw Sdk::PostconditionFailedException(); \
 } while (false);
+
+
+#define SAFE_DEREF(x) [&x]() -> auto& { if (x) return *(x); else throw Sdk::DereferenceFailedException(); }()
