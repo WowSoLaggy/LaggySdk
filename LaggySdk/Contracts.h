@@ -57,4 +57,4 @@ namespace Sdk
 } while (false);
 
 
-#define SAFE_DEREF(x) [&x]() -> auto& { if (x) return *(x); else throw Sdk::DereferenceFailedException(); }()
+#define SAFE_DEREF(x) [&]() -> auto& { if (x) return *(x); else throw Sdk::DereferenceFailedException(); }()
