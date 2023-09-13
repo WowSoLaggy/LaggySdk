@@ -144,7 +144,6 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="Contracts.h" />
     <ClInclude Include="Cursor.h" />
-    <ClInclude Include="dirent.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Files.h" />
     <ClInclude Include="FpsCounter.h" />

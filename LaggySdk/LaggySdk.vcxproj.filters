@@ -34,9 +34,6 @@
     <Filter Include="src\WindowsApi\Window">
       <UniqueIdentifier>{0bd526a7-f03b-43aa-a3e2-bc14d4702139}</UniqueIdentifier>
     </Filter>
-    <Filter Include="libs\dirent">
-      <UniqueIdentifier>{45259b94-c12c-45bb-ac2a-e4453841d312}</UniqueIdentifier>
-    </Filter>
     <Filter Include="libs\jsoncpp">
       <UniqueIdentifier>{39a471d2-e579-4370-a824-a21021723e8a}</UniqueIdentifier>
     </Filter>
@@ -146,9 +143,6 @@
     </ClInclude>
     <ClInclude Include="Rect.h">
       <Filter>src\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="dirent.h">
-      <Filter>libs\dirent</Filter>
     </ClInclude>
     <ClInclude Include="json.h">
       <Filter>libs\jsoncpp</Filter>
