@@ -17,9 +17,11 @@ namespace Sdk
       return;
 
     if (d_parent)
-      removeChild(*this);
+      d_parent->removeChild(*this);
     if (i_parent)
-      addChild(shared_from_this());
+      i_parent->addChild(shared_from_this());
+
+    d_parent = i_parent;
   }
 
 
