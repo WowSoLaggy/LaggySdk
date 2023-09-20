@@ -52,6 +52,8 @@ namespace Sdk
     Vector2<T> operator*(T i_right) const { return Vector2<T>{ x * i_right, y * i_right }; }
     Vector2<T> operator/(T i_right) const { return Vector2<T>{ x / i_right, y / i_right }; }
 
+    Vector2<T> operator*(const Vector2<T>& i_right) const { return Vector2<T>{ x * i_right.x, y * i_right.y }; }
+
     void operator*=(T i_right)
     {
       x *= i_right;
