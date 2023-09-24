@@ -16,6 +16,9 @@ namespace Sdk
 
     void setParent(TreeNode* i_parent);
 
+    void sendToFront();
+    void sendToBack();
+
     virtual void addChild(std::shared_ptr<TreeNode> i_child);
     virtual void removeChild(TreeNode& i_child);
     virtual void removeChildren();

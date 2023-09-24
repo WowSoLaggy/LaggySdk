@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "TreeNode.h"
 
+#include "Contracts.h"
+
 
 namespace Sdk
 {
@@ -22,6 +24,43 @@ namespace Sdk
       i_parent->addChild(shared_from_this());
 
     d_parent = i_parent;
+  }
+
+
+  void TreeNode::sendToFront()
+  {
+    if (auto* parent = getParent())
+    {
+      auto& children = parent->getChildren();
+      if (children.size() > 1)
+      {
+        auto it = std::find_if(children.rbegin(), children.rend(), [&](const auto ptr) {
+          return ptr.get() == this;
+          });
+        CONTRACT_EXPECT(it != children.rend());
+
+        if (it != children.rbegin())
+          std::iter_swap(it, children.rbegin());
+      }
+    }
+  }
+
+  void TreeNode::sendToBack()
+  {
+    if (auto* parent = getParent())
+    {
+      auto& children = parent->getChildren();
+      if (children.size() > 1)
+      {
+        auto it = std::find_if(children.begin(), children.end(), [&](const auto ptr) {
+          return ptr.get() == this;
+          });
+        CONTRACT_EXPECT(it != children.end());
+
+        if (it != children.begin())
+          std::iter_swap(it, children.begin());
+      }
+    }
   }
 
 
