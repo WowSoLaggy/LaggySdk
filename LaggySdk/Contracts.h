@@ -41,6 +41,15 @@ namespace Sdk
     }
   };
 
+  class DeadEndException : public std::runtime_error
+  {
+  public:
+    DeadEndException()
+      : std::runtime_error("Dead end is reached")
+    {
+    }
+  };
+
 } // ns Sdk
 
 
@@ -54,6 +63,10 @@ namespace Sdk
 
 #define CONTRACT_ENSURE(condition) do { \
   if (!(condition)) throw Sdk::PostconditionFailedException(); \
+} while (false);
+
+#define CONTRACT_THROW do { \
+  throw Sdk::DeadEndException(); \
 } while (false);
 
 
