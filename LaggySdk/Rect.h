@@ -54,10 +54,19 @@ namespace Sdk
     Vector2<T> bottomRight() const { return { right(), bottom() }; }
     Vector2<T> size() const { return { width(), height() }; }
 
-    void move(const Vector2<T>& i_offset)
+    template <typename U>
+    Rect<T>& move(const Vector2<U>& i_offset)
     {
       p1 += i_offset;
       p2 += i_offset;
+
+      return *this;
+    }
+
+    template <typename U>
+    Rect<T> move(const Vector2<U>& i_offset) const
+    {
+      return { p1 + i_offset, p2 + i_offset };
     }
 
     bool containsPoint(const Vector2<T>& i_point) const
