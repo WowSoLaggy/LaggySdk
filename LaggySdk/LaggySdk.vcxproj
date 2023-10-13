@@ -164,6 +164,7 @@
     <ClInclude Include="IVisibility.h" />
     <ClInclude Include="json-forwards.h" />
     <ClInclude Include="json.h" />
+    <ClInclude Include="JsonHelper.h" />
     <ClInclude Include="Locker.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Message.h" />
@@ -194,6 +195,7 @@
     <ClCompile Include="HandleMessages.cpp" />
     <ClCompile Include="IUniqueId.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
+    <ClCompile Include="JsonHelper.cpp" />
     <ClCompile Include="Locker.cpp" />
     <ClCompile Include="MessageCodeUtils.cpp" />
     <ClCompile Include="Random.cpp" />

@@ -67,6 +67,9 @@
     <Filter Include="src\Vectors">
       <UniqueIdentifier>{7688cff5-0d71-41a8-8e39-37235b1b96d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\JsonHelper">
+      <UniqueIdentifier>{f0818406-c494-46b8-b6e0-8abb8ed914b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -207,6 +210,9 @@
     <ClInclude Include="VectorUtils.h">
       <Filter>src\Vectors</Filter>
     </ClInclude>
+    <ClInclude Include="JsonHelper.h">
+      <Filter>src\JsonHelper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -256,6 +262,9 @@
     </ClCompile>
     <ClCompile Include="StringUtils.cpp">
       <Filter>src\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonHelper.cpp">
+      <Filter>src\JsonHelper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
