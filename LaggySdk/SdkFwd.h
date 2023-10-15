@@ -16,4 +16,13 @@ namespace Sdk
   class IState;
   class ITransition;
 
+  class ISerializable;
+
 } // ns Sdk
+
+
+namespace Json
+{
+  class Value;
+
+} // ns Json

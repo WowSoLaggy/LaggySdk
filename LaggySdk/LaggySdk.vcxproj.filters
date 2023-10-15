@@ -70,6 +70,9 @@
     <Filter Include="src\JsonHelper">
       <UniqueIdentifier>{f0818406-c494-46b8-b6e0-8abb8ed914b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Serializable">
+      <UniqueIdentifier>{8d263760-8fa2-41c6-946d-9632568faa69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -213,6 +216,21 @@
     <ClInclude Include="JsonHelper.h">
       <Filter>src\JsonHelper</Filter>
     </ClInclude>
+    <ClInclude Include="ISerializable.h">
+      <Filter>src\Serializable</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonSerializer.h">
+      <Filter>src\Serializable</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializableField.h">
+      <Filter>src\Serializable</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializableBase.h">
+      <Filter>src\Serializable</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializableObject.h">
+      <Filter>src\Serializable</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
@@ -265,6 +283,15 @@
     </ClCompile>
     <ClCompile Include="JsonHelper.cpp">
       <Filter>src\JsonHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="ISerializable.cpp">
+      <Filter>src\Serializable</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonSerializer.cpp">
+      <Filter>src\Serializable</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializableObject.cpp">
+      <Filter>src\Serializable</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

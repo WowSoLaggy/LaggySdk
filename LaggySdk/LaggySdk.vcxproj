@@ -155,6 +155,7 @@
     <ClInclude Include="IPosition3.h" />
     <ClInclude Include="IRotation3.h" />
     <ClInclude Include="IScale3.h" />
+    <ClInclude Include="ISerializable.h" />
     <ClInclude Include="ISpeed3.h" />
     <ClInclude Include="IState.h" />
     <ClInclude Include="ITaggable.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="json-forwards.h" />
     <ClInclude Include="json.h" />
     <ClInclude Include="JsonHelper.h" />
+    <ClInclude Include="JsonSerializer.h" />
     <ClInclude Include="Locker.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Message.h" />
@@ -175,6 +177,9 @@
     <ClInclude Include="Ray.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="SdkFwd.h" />
+    <ClInclude Include="SerializableBase.h" />
+    <ClInclude Include="SerializableField.h" />
+    <ClInclude Include="SerializableObject.h" />
     <ClInclude Include="Shapes.h" />
     <ClInclude Include="Size.h" />
     <ClInclude Include="StateMachine.h" />
@@ -193,12 +198,15 @@
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="FpsCounter.cpp" />
     <ClCompile Include="HandleMessages.cpp" />
+    <ClCompile Include="ISerializable.cpp" />
     <ClCompile Include="IUniqueId.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
     <ClCompile Include="JsonHelper.cpp" />
+    <ClCompile Include="JsonSerializer.cpp" />
     <ClCompile Include="Locker.cpp" />
     <ClCompile Include="MessageCodeUtils.cpp" />
     <ClCompile Include="Random.cpp" />
+    <ClCompile Include="SerializableObject.cpp" />
     <ClCompile Include="Shapes.cpp" />
     <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="stdafx.cpp">
