@@ -182,6 +182,7 @@
     <ClInclude Include="SerializableBase.h" />
     <ClInclude Include="SerializableField.h" />
     <ClInclude Include="SerializableObject.h" />
+    <ClInclude Include="Serializers.h" />
     <ClInclude Include="Shapes.h" />
     <ClInclude Include="Size.h" />
     <ClInclude Include="StateMachine.h" />

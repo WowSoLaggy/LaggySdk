@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SerializableBase.h"
+#include "Serializers.h"
 
 
 namespace Sdk
@@ -17,7 +18,7 @@ namespace Sdk
 
     virtual void serialize(Json::Value& a_json) const override
     {
-      a_json[d_name] = d_data;
+      writeJson(a_json[d_name], d_data);
     }
 
   private:
