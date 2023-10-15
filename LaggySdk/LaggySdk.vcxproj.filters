@@ -73,6 +73,12 @@
     <Filter Include="src\Serializable">
       <UniqueIdentifier>{8d263760-8fa2-41c6-946d-9632568faa69}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\EnumStr">
+      <UniqueIdentifier>{844d9f6c-f604-4add-8d3b-99149a15fd93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MapUtils">
+      <UniqueIdentifier>{d496285e-a3d6-4c9e-9190-b086be31e0e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -230,6 +236,12 @@
     </ClInclude>
     <ClInclude Include="SerializableObject.h">
       <Filter>src\Serializable</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumStr.h">
+      <Filter>src\EnumStr</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUtils.h">
+      <Filter>src\MapUtils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

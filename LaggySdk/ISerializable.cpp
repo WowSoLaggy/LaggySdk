@@ -1,9 +1,7 @@
 #include "stdafx.h"
 #include "ISerializable.h"
 
-#include "Contracts.h"
 #include "SerializableObject.h"
-
 
 namespace Sdk
 {
@@ -11,7 +9,6 @@ namespace Sdk
   {
     return d_fields;
   }
-
 
   void ISerializable::pushObject(const std::string& i_name, ISerializable& i_serializableObject) const
   {

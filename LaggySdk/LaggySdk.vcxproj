@@ -144,6 +144,7 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="Contracts.h" />
     <ClInclude Include="Cursor.h" />
+    <ClInclude Include="EnumStr.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Files.h" />
     <ClInclude Include="FpsCounter.h" />
@@ -168,6 +169,7 @@
     <ClInclude Include="JsonHelper.h" />
     <ClInclude Include="JsonSerializer.h" />
     <ClInclude Include="Locker.h" />
+    <ClInclude Include="MapUtils.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="MessageCodeUtils.h" />
