@@ -19,4 +19,9 @@ namespace Sdk
     JsonSerializer::serialize(d_serializableObject, a_json[d_name]);
   }
 
+  void SerializableObject::deserialize(const Json::Value& i_json) const
+  {
+    JsonSerializer::deserialize(d_serializableObject, i_json);
+  }
+
 } // ns Sdk

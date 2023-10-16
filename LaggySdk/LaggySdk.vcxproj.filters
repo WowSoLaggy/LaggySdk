@@ -70,14 +70,20 @@
     <Filter Include="src\JsonHelper">
       <UniqueIdentifier>{f0818406-c494-46b8-b6e0-8abb8ed914b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Serializable">
-      <UniqueIdentifier>{8d263760-8fa2-41c6-946d-9632568faa69}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\EnumStr">
       <UniqueIdentifier>{844d9f6c-f604-4add-8d3b-99149a15fd93}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\MapUtils">
       <UniqueIdentifier>{d496285e-a3d6-4c9e-9190-b086be31e0e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Serialization">
+      <UniqueIdentifier>{8d263760-8fa2-41c6-946d-9632568faa69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Serialization\Fields">
+      <UniqueIdentifier>{410eb832-fd82-4963-b162-716d1c36d3d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Serialization\Utils">
+      <UniqueIdentifier>{df2a04b5-c052-43ab-b9c3-19d0504163f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -223,19 +229,10 @@
       <Filter>src\JsonHelper</Filter>
     </ClInclude>
     <ClInclude Include="ISerializable.h">
-      <Filter>src\Serializable</Filter>
+      <Filter>src\Serialization</Filter>
     </ClInclude>
     <ClInclude Include="JsonSerializer.h">
-      <Filter>src\Serializable</Filter>
-    </ClInclude>
-    <ClInclude Include="SerializableField.h">
-      <Filter>src\Serializable</Filter>
-    </ClInclude>
-    <ClInclude Include="SerializableBase.h">
-      <Filter>src\Serializable</Filter>
-    </ClInclude>
-    <ClInclude Include="SerializableObject.h">
-      <Filter>src\Serializable</Filter>
+      <Filter>src\Serialization</Filter>
     </ClInclude>
     <ClInclude Include="EnumStr.h">
       <Filter>src\EnumStr</Filter>
@@ -243,8 +240,17 @@
     <ClInclude Include="MapUtils.h">
       <Filter>src\MapUtils</Filter>
     </ClInclude>
+    <ClInclude Include="SerializableBase.h">
+      <Filter>src\Serialization\Fields</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializableField.h">
+      <Filter>src\Serialization\Fields</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializableObject.h">
+      <Filter>src\Serialization\Fields</Filter>
+    </ClInclude>
     <ClInclude Include="Serializers.h">
-      <Filter>src\Serializable</Filter>
+      <Filter>src\Serialization\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -300,13 +306,13 @@
       <Filter>src\JsonHelper</Filter>
     </ClCompile>
     <ClCompile Include="ISerializable.cpp">
-      <Filter>src\Serializable</Filter>
+      <Filter>src\Serialization</Filter>
     </ClCompile>
     <ClCompile Include="JsonSerializer.cpp">
-      <Filter>src\Serializable</Filter>
+      <Filter>src\Serialization</Filter>
     </ClCompile>
     <ClCompile Include="SerializableObject.cpp">
-      <Filter>src\Serializable</Filter>
+      <Filter>src\Serialization\Fields</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

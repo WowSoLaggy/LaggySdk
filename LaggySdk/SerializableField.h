@@ -21,6 +21,11 @@ namespace Sdk
       writeJson(a_json[d_name], d_data);
     }
 
+    virtual void deserialize(const Json::Value& i_json) const override
+    {
+      readJson(i_json, d_data);
+    }
+
   private:
     std::string d_name;
     T& d_data;

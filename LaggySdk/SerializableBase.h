@@ -11,6 +11,7 @@ namespace Sdk
     virtual ~SerializableBase() = default;
 
     virtual void serialize(Json::Value& a_json) const = 0;
+    virtual void deserialize(const Json::Value& i_json) const = 0;
   };
 
 } // ns Sdk

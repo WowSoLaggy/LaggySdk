@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "ISerializable.h"
 
-#include "SerializableObject.h"
 
 namespace Sdk
 {
@@ -10,9 +9,17 @@ namespace Sdk
     return d_fields;
   }
 
-  void ISerializable::pushObject(const std::string& i_name, ISerializable& i_serializableObject) const
+
+  void ISerializable::pushObject(const std::string& i_name, ISerializable& i_serializableObject)
   {
-    d_fields.push_back(std::make_shared<SerializableObject>(i_name, i_serializableObject));
+    assertNameIsNotDuplicated(i_name);
+    d_fields.insert({ i_name, std::make_shared<SerializableObject>(i_name, i_serializableObject) });
+  }
+
+
+  void ISerializable::assertNameIsNotDuplicated(const std::string& i_name) const
+  {
+    CONTRACT_EXPECT(!d_fields.contains(i_name));
   }
 
 } // ns Sdk

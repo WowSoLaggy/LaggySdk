@@ -3,6 +3,7 @@
 #include "SdkFwd.h"
 #include "SerializableBase.h"
 
+
 namespace Sdk
 {
   class SerializableObject : public SerializableBase
@@ -11,6 +12,7 @@ namespace Sdk
     SerializableObject(std::string i_name, ISerializable& i_serializableObject);
 
     virtual void serialize(Json::Value& a_json) const override;
+    virtual void deserialize(const Json::Value& i_json) const override;
 
   private:
     std::string d_name;
