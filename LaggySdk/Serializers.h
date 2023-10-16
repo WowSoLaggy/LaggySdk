@@ -13,6 +13,14 @@ namespace Sdk
   }
 
   template <typename T>
+  void readJson(const Json::Value& i_json, T& o_value)
+  {
+    // Don't know how to read
+    CONTRACT_THROW;
+  }
+
+
+  template <typename T>
   void writeJson(Json::Value& a_json, const Sdk::Vector2<T>& i_value)
   {
     a_json["x"] = i_value.x;
@@ -34,6 +42,52 @@ namespace Sdk
     a_json["y"] = i_value.y;
     a_json["z"] = i_value.z;
     a_json["w"] = i_value.w;
+  }
+
+
+  inline void readJson(const Json::Value& i_json, int& o_value)
+  {
+    o_value = i_json.asInt();
+  }
+
+  inline void readJson(const Json::Value& i_json, float& o_value)
+  {
+    o_value = i_json.asFloat();
+  }
+
+  inline void readJson(const Json::Value& i_json, bool& o_value)
+  {
+    o_value = i_json.asBool();
+  }
+
+  inline void readJson(const Json::Value& i_json, std::string& o_value)
+  {
+    o_value = i_json.asString();
+  }
+
+
+  template <typename T>
+  void readVector(const Json::Value& i_json, Sdk::Vector2<T>& o_value)
+  {
+    readJson<T>(i_json["x"], o_value.x);
+    readJson<T>(i_json["y"], o_value.y);
+  }
+
+  template <typename T>
+  void readVector(const Json::Value& i_json, Sdk::Vector3<T>& o_value)
+  {
+    readJson<T>(i_json["x"], o_value.x);
+    readJson<T>(i_json["y"], o_value.y);
+    readJson<T>(i_json["z"], o_value.z);
+  }
+
+  template <typename T>
+  void readVector(const Json::Value& i_json, Sdk::Vector4<T>& o_value)
+  {
+    readJson<T>(i_json["x"], o_value.x);
+    readJson<T>(i_json["y"], o_value.y);
+    readJson<T>(i_json["z"], o_value.z);
+    readJson<T>(i_json["w"], o_value.w);
   }
 
 } // ns Sdk
