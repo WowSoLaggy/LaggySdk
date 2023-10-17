@@ -4,9 +4,20 @@
 
 namespace Sdk
 {
+  void ISerializable::onDeserialized()
+  {
+  }
+
+
   const SerializableFields& ISerializable::getFields() const
   {
     return d_fields;
+  }
+
+  void ISerializable::clearAndPushFields()
+  {
+    d_fields.clear();
+    pushFields();
   }
 
 

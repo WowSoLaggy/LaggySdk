@@ -37,7 +37,8 @@ namespace Sdk
 
   void JsonSerializer::serialize(ISerializable& i_serializable, Json::Value& a_json)
   {
-    i_serializable.pushFields();
+    i_serializable.clearAndPushFields();
+
     for (const auto& [_, field] : i_serializable.getFields())
       SAFE_DEREF(field).serialize(a_json);
   }
@@ -54,7 +55,7 @@ namespace Sdk
 
   void JsonSerializer::deserialize(ISerializable& o_serializable, const Json::Value& i_json)
   {
-    o_serializable.pushFields();
+    o_serializable.clearAndPushFields();
 
     for (const auto& childName : i_json.getMemberNames())
     {
@@ -66,6 +67,8 @@ namespace Sdk
       else
         onFieldNotFound(childName, node);
     }
+
+    o_serializable.onDeserialized();
   }
 
 } // ns Sdk

@@ -45,49 +45,39 @@ namespace Sdk
   }
 
 
-  inline void readJson(const Json::Value& i_json, int& o_value)
-  {
-    o_value = i_json.asInt();
-  }
+  void readJson(const Json::Value& i_json, int& o_value);
 
-  inline void readJson(const Json::Value& i_json, float& o_value)
-  {
-    o_value = i_json.asFloat();
-  }
+  void readJson(const Json::Value& i_json, float& o_value);
 
-  inline void readJson(const Json::Value& i_json, bool& o_value)
-  {
-    o_value = i_json.asBool();
-  }
+  void readJson(const Json::Value& i_json, double& o_value);
 
-  inline void readJson(const Json::Value& i_json, std::string& o_value)
-  {
-    o_value = i_json.asString();
-  }
+  void readJson(const Json::Value& i_json, bool& o_value);
+
+  void readJson(const Json::Value& i_json, std::string& o_value);
 
 
   template <typename T>
-  void readVector(const Json::Value& i_json, Sdk::Vector2<T>& o_value)
+  void readJson(const Json::Value& i_json, Sdk::Vector2<T>& o_value)
   {
-    readJson<T>(i_json["x"], o_value.x);
-    readJson<T>(i_json["y"], o_value.y);
+    readJson(i_json["x"], o_value.x);
+    readJson(i_json["y"], o_value.y);
   }
 
   template <typename T>
-  void readVector(const Json::Value& i_json, Sdk::Vector3<T>& o_value)
+  void readJson(const Json::Value& i_json, Sdk::Vector3<T>& o_value)
   {
-    readJson<T>(i_json["x"], o_value.x);
-    readJson<T>(i_json["y"], o_value.y);
-    readJson<T>(i_json["z"], o_value.z);
+    readJson(i_json["x"], o_value.x);
+    readJson(i_json["y"], o_value.y);
+    readJson(i_json["z"], o_value.z);
   }
 
   template <typename T>
-  void readVector(const Json::Value& i_json, Sdk::Vector4<T>& o_value)
+  void readJson(const Json::Value& i_json, Sdk::Vector4<T>& o_value)
   {
-    readJson<T>(i_json["x"], o_value.x);
-    readJson<T>(i_json["y"], o_value.y);
-    readJson<T>(i_json["z"], o_value.z);
-    readJson<T>(i_json["w"], o_value.w);
+    readJson(i_json["x"], o_value.x);
+    readJson(i_json["y"], o_value.y);
+    readJson(i_json["z"], o_value.z);
+    readJson(i_json["w"], o_value.w);
   }
 
 } // ns Sdk

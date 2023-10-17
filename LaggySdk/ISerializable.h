@@ -18,8 +18,10 @@ namespace Sdk
     virtual ~ISerializable() = default;
 
     virtual void pushFields() = 0;
+    virtual void onDeserialized();
 
     const SerializableFields& getFields() const;
+    void clearAndPushFields();
 
   protected:
     template <typename T>

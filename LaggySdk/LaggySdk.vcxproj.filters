@@ -317,5 +317,8 @@
     <ClCompile Include="SerializableBase.cpp">
       <Filter>src\Serialization\Fields</Filter>
     </ClCompile>
+    <ClCompile Include="Serializers.cpp">
+      <Filter>src\Serialization\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

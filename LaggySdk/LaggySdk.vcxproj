@@ -211,6 +211,7 @@
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="SerializableBase.cpp" />
     <ClCompile Include="SerializableObject.cpp" />
+    <ClCompile Include="Serializers.cpp" />
     <ClCompile Include="Shapes.cpp" />
     <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="stdafx.cpp">
