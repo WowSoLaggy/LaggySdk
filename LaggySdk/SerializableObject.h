@@ -15,7 +15,6 @@ namespace Sdk
     virtual void deserialize(const Json::Value& i_json) const override;
 
   private:
-    std::string d_name;
     ISerializable& d_serializableObject;
   };
 

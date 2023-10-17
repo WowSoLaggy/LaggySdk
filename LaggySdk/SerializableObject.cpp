@@ -8,7 +8,7 @@
 namespace Sdk
 {
   SerializableObject::SerializableObject(std::string i_name, ISerializable& i_serializableObject)
-    : d_name(std::move(i_name))
+    : SerializableBase(std::move(i_name))
     , d_serializableObject(i_serializableObject)
   {
   }
@@ -16,7 +16,7 @@ namespace Sdk
 
   void SerializableObject::serialize(Json::Value& a_json) const
   {
-    JsonSerializer::serialize(d_serializableObject, a_json[d_name]);
+    JsonSerializer::serialize(d_serializableObject, getJsonToSerializeTo(a_json));
   }
 
   void SerializableObject::deserialize(const Json::Value& i_json) const

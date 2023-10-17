@@ -11,14 +11,14 @@ namespace Sdk
   {
   public:
     SerializableField(std::string i_name, T& i_data)
-      : d_name(std::move(i_name))
+      : SerializableBase(std::move(i_name))
       , d_data(i_data)
     {
     }
 
     virtual void serialize(Json::Value& a_json) const override
     {
-      writeJson(a_json[d_name], d_data);
+      writeJson(getJsonToSerializeTo(a_json), d_data);
     }
 
     virtual void deserialize(const Json::Value& i_json) const override
@@ -27,7 +27,6 @@ namespace Sdk
     }
 
   private:
-    std::string d_name;
     T& d_data;
   };
 
