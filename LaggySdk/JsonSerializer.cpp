@@ -9,23 +9,6 @@
 
 namespace Sdk
 {
-  namespace
-  {
-    void onFieldFound(SerializableBase& o_field, const Json::Value& i_json)
-    {
-      o_field.deserialize(i_json);
-    }
-
-    void onFieldNotFound(const std::string& i_name, const Json::Value& i_json)
-    {
-      // TODO: ae
-      // Continue here
-      CONTRACT_THROW;
-    }
-
-  } // anonym NS
-
-
   void JsonSerializer::serialize(ISerializable& i_serializable, const fs::path& i_path)
   {
     Json::Value root;
@@ -63,9 +46,12 @@ namespace Sdk
 
       const auto it = o_serializable.getFields().find(childName);
       if (it != o_serializable.getFields().end())
-        onFieldFound(SAFE_DEREF(it->second), node);
+      {
+        const auto& field = SAFE_DEREF(it->second);
+        field.deserialize(node);
+      }
       else
-        onFieldNotFound(childName, node);
+        o_serializable.onFieldNotFound(childName, node);
     }
 
     o_serializable.onDeserialized();

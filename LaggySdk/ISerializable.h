@@ -18,6 +18,7 @@ namespace Sdk
     virtual ~ISerializable() = default;
 
     virtual void pushFields() = 0;
+    virtual void onFieldNotFound(const std::string& i_name, const Json::Value& i_json);
     virtual void onDeserialized();
 
     const SerializableFields& getFields() const;
