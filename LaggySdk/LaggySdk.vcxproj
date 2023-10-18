@@ -197,6 +197,7 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Contracts.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="FpsCounter.cpp" />

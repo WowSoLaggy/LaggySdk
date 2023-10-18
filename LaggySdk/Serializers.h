@@ -16,7 +16,7 @@ namespace Sdk
   void readJson(const Json::Value& i_json, T& o_value)
   {
     // Don't know how to read
-    CONTRACT_THROW;
+    CONTRACT_THROW();
   }
 
 
