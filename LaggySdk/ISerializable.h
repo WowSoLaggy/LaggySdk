@@ -35,10 +35,10 @@ namespace Sdk
     void pushObject(const std::string& i_name, ISerializable& i_serializableObject);
 
     template <typename T>
-    void pushSharedPtr(const std::string& i_name, std::shared_ptr<T>& i_data);
+    void pushSharedPtr(const std::string& i_name, std::shared_ptr<T>& i_ptr);
 
     template <typename T>
-    void pushVector(const std::string& i_name, std::vector<T>& i_data);
+    void pushVector(const std::string& i_name, std::vector<T>& i_vector);
 
   private:
     SerializableFields d_fields;
@@ -150,7 +150,8 @@ namespace Sdk
   private:
     std::vector<T>& d_vector;
   };
-  
+
+
 
 
 
@@ -187,18 +188,18 @@ namespace Sdk
 
 
   template <typename T>
-  void ISerializable::pushSharedPtr(const std::string& i_name, std::shared_ptr<T>& i_data)
+  void ISerializable::pushSharedPtr(const std::string& i_name, std::shared_ptr<T>& i_ptr)
   {
     assertNameIsNotDuplicated(i_name);
-    d_fields.insert({ i_name, std::make_shared<SerializableShared<T>>(i_name, i_data) });
+    d_fields.insert({ i_name, std::make_shared<SerializableShared<T>>(i_name, i_ptr) });
   }
 
 
   template <typename T>
-  void ISerializable::pushVector(const std::string& i_name, std::vector<T>& i_data)
+  void ISerializable::pushVector(const std::string& i_name, std::vector<T>& i_vector)
   {
     assertNameIsNotDuplicated(i_name);
-    d_fields.insert({ i_name, std::make_shared<SerializableVector<T>>(i_name, i_data) });
+    d_fields.insert({ i_name, std::make_shared<SerializableVector<T>>(i_name, i_vector) });
   }
 
 } // ns Sdk
