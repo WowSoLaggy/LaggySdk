@@ -11,6 +11,8 @@ namespace Sdk
 
     const std::string str = Json::writeString(builder, i_root);
 
+    fs::create_directories(i_path.parent_path());
+
     std::ofstream file(i_path);
     file << str;
   }
