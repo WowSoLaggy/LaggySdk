@@ -4,8 +4,9 @@
 
 namespace Sdk
 {
-  void ISerializable::onFieldNotFound(const std::string& i_name, const Json::Value& i_json)
+  FieldHandled ISerializable::onFieldNotFound(const std::string& i_name, const Json::Value& i_json)
   {
+    return false;
   }
 
   void ISerializable::onDeserialized()

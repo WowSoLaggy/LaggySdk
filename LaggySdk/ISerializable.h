@@ -10,6 +10,7 @@ namespace Sdk
   class SerializableShared;
 
   using SerializableFields = std::unordered_map<std::string, std::shared_ptr<SerializableBase>>;
+  using FieldHandled = bool;
 
 
   class ISerializable
@@ -18,7 +19,7 @@ namespace Sdk
     virtual ~ISerializable() = default;
 
     virtual void pushFields() = 0;
-    virtual void onFieldNotFound(const std::string& i_name, const Json::Value& i_json);
+    virtual FieldHandled onFieldNotFound(const std::string& i_name, const Json::Value& i_json);
     virtual void onDeserialized();
 
     const SerializableFields& getFields() const;
@@ -36,6 +37,9 @@ namespace Sdk
 
     template <typename T>
     void pushSharedPtr(const std::string& i_name, std::shared_ptr<T>& i_ptr);
+
+    template <typename T>
+    void pushOptional(const std::string& i_name, std::optional<T>& i_opt);
 
     template <typename T>
     void pushVector(const std::string& i_name, std::vector<T>& i_vector);
@@ -105,6 +109,43 @@ namespace Sdk
 
 
   template <typename T>
+  class SerializableOptional : public SerializableBase
+  {
+  public:
+    SerializableOptional(std::string i_name, std::optional<T>& i_opt)
+      : SerializableBase(std::move(i_name))
+      , d_opt(i_opt)
+    {
+    }
+
+
+    virtual void serialize(Json::Value& a_json) const override
+    {
+      if (!d_opt)
+        return;
+
+      const auto base = getUnderlyingField(getName(), *d_opt);
+      CONTRACT_EXPECT(base);
+      base->serialize(a_json);
+    }
+
+    virtual void deserialize(const Json::Value& i_json) const override
+    {
+      if (!d_opt)
+        d_opt = std::make_optional<T>();
+
+      const auto base = getUnderlyingField(getName(), *d_opt);
+      CONTRACT_EXPECT(base);
+      base->deserialize(i_json);
+    }
+
+
+  private:
+    std::optional<T>& d_opt;
+  };
+
+
+  template <typename T>
   class SerializableVector : public SerializableBase
   {
   public:
@@ -167,7 +208,7 @@ namespace Sdk
     std::shared_ptr<SerializableBase> getUnderlyingField_(bool_<false>, std::string i_name, T& d_data)
     {
       // Not inheriting ISerializable
-      return std::shared_ptr<SerializableField<T>>(i_name, d_data);
+      return std::make_shared<SerializableField<T>>(i_name, d_data);
     }
 
     std::shared_ptr<SerializableBase> getUnderlyingField_(bool_<true>, std::string i_name, ISerializable& d_data)
@@ -193,6 +234,15 @@ namespace Sdk
     assertNameIsNotDuplicated(i_name);
     d_fields.insert({ i_name, std::make_shared<SerializableShared<T>>(i_name, i_ptr) });
   }
+
+
+  template <typename T>
+  void ISerializable::pushOptional(const std::string& i_name, std::optional<T>& i_opt)
+  {
+    assertNameIsNotDuplicated(i_name);
+    d_fields.insert({ i_name, std::make_shared<SerializableOptional<T>>(i_name, i_opt) });
+  }
+
 
 
   template <typename T>

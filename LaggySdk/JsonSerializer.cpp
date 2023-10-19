@@ -51,7 +51,10 @@ namespace Sdk
         field.deserialize(node);
       }
       else
-        o_serializable.onFieldNotFound(childName, node);
+      {
+        FieldHandled handled = o_serializable.onFieldNotFound(childName, node);
+        CONTRACT_ASSERT(handled);
+      }
     }
 
     o_serializable.onDeserialized();
