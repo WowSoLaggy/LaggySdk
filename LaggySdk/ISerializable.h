@@ -158,6 +158,9 @@ namespace Sdk
 
     virtual void serialize(Json::Value& a_json) const override
     {
+      if (d_vector.empty())
+        return;
+
       auto& arrayRootNode = getJsonToSerializeTo(a_json);
 
       for (T& item : d_vector)
