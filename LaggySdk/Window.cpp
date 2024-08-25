@@ -9,6 +9,14 @@ namespace Sdk
 {
   namespace
   {
+    HMONITOR getMonitorWithFocus()
+    {
+      HWND hwnd = GetForegroundWindow();
+      if (!hwnd)
+        return MonitorFromWindow(GetDesktopWindow(), MONITOR_DEFAULTTOPRIMARY);
+      return MonitorFromWindow(hwnd, MONITOR_DEFAULTTONEAREST);
+    }
+
     LRESULT __stdcall wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
     {
       switch (msg)
@@ -35,10 +43,12 @@ namespace Sdk
 
   Window::Window(const Vector2I& i_resolution, std::string i_appName)
     : d_appName(std::move(i_appName))
+    , d_resolution(i_resolution)
   {
     // Register win class
-
+    
     d_hInstance = GetModuleHandle(nullptr);
+    CONTRACT_ASSERT(d_hInstance);
 
     WNDCLASSEX wc;
     wc.style = CS_OWNDC;
@@ -58,11 +68,19 @@ namespace Sdk
 
     // Create window
 
-    int posX = (GetSystemMetrics(SM_CXSCREEN) - i_resolution.x) / 2;
-    int posY = (GetSystemMetrics(SM_CYSCREEN) - i_resolution.y) / 2;
+    HMONITOR hMonitor = getMonitorWithFocus();
+    CONTRACT_ASSERT(hMonitor);
+    MONITORINFO mi = { sizeof(mi) };
+    if (!GetMonitorInfo(hMonitor, &mi))
+      CONTRACT_THROW();
+
+    d_position = {
+      mi.rcWork.left + (mi.rcWork.right - mi.rcWork.left - d_resolution.x) / 2,
+      mi.rcWork.top + (mi.rcWork.bottom - mi.rcWork.top - d_resolution.y) / 2
+    };
 
     d_hWnd = CreateWindowEx(0, d_appName.c_str(), d_appName.c_str(), WS_POPUP,
-      posX, posY, i_resolution.x, i_resolution.y, nullptr, nullptr, d_hInstance, nullptr);
+      d_position.x, d_position.y, d_resolution.x, d_resolution.y, nullptr, nullptr, d_hInstance, nullptr);
     CONTRACT_ASSERT(d_hWnd);
   }
 

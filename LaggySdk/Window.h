@@ -15,12 +15,16 @@ namespace Sdk
 
     HWND getHWnd() const { return d_hWnd; }
 
-    void dispose();
-
     void show() const;
+
+    const Vector2I& getResolution() const { return d_resolution; }
+    const Vector2I& getPosition() const { return d_position; }
 
   private:
     std::string d_appName;
+    Vector2I d_resolution;
+    Vector2I d_position;
+
     HWND d_hWnd;
     HINSTANCE d_hInstance;
   };

@@ -1,13 +1,16 @@
 #include "stdafx.h"
 #include "Cursor.h"
 
+#include "Window.h"
+
 
 namespace Sdk
 {
-  void setCursorToCenter()
+  void setCursorToCenter(const Window& i_window)
   {
-    int posX = GetSystemMetrics(SM_CXSCREEN) / 2;
-    int posY = GetSystemMetrics(SM_CYSCREEN) / 2;
+    const int posX = i_window.getPosition().x + i_window.getResolution().x / 2;
+    const int posY = i_window.getPosition().y + i_window.getResolution().y / 2;
+
     SetCursorPos(posX, posY);
   }
 
