@@ -252,6 +252,9 @@
     <ClInclude Include="Serializers.h">
       <Filter>src\Serialization\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Shuffle.h">
+      <Filter>src\Random</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">
