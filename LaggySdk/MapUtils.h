@@ -14,4 +14,14 @@ namespace Sdk
     return res;
   }
 
+
+  template <typename MapType>
+  auto keys(const MapType& myMap)
+  {
+    std::vector<typename MapType::key_type> keyList;
+    for (const auto& pair : myMap)
+      keyList.push_back(pair.first);
+    return keyList;
+  }
+
 } // ns Sdk
