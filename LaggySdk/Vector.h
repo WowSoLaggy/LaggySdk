@@ -265,10 +265,38 @@ namespace Sdk
   template <typename T>
   struct Vector4
   {
-    T x{ (T)0 };
-    T y{ (T)0 };
-    T z{ (T)0 };
-    T w{ (T)0 };
+    constexpr Vector4()
+      : Vector4((T)0, (T)0, (T)0, (T)0)
+    {
+    }
+
+    template <typename U>
+    constexpr Vector4(const U& i_x, const U& i_y, const U& i_z, const U& i_w)
+      : x((T)i_x)
+      , y((T)i_y)
+      , z((T)i_z)
+      , w((T)i_w)
+    {
+    }
+
+
+    union
+    {
+      struct
+      {
+        T x;
+        T y;
+        T z;
+        T w;
+      };
+      struct
+      {
+        T r;
+        T g;
+        T b;
+        T a;
+      };
+    };
 
     static Vector4 zero() { return { (T)0, (T)0, (T)0, (T)0 }; }
     static Vector4 identity() { return { (T)1, (T)1, (T)1, (T)1 }; }
