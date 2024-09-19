@@ -106,9 +106,23 @@ namespace Sdk
     }
 
     template <typename V>
+    Rect<T> expand(V i_value) const
+    {
+      auto result = *this;
+      result.expand(i_value);
+      return result;
+    }
+
+    template <typename V>
     void shrink(V i_value)
     {
       expand(-i_value);
+    }
+
+    template <typename V>
+    Rect<T> shrink(V i_value) const
+    {
+      return expand(-i_value);
     }
 
 
