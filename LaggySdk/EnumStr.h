@@ -3,6 +3,35 @@
 #include "MapUtils.h"
 
 
+/*
+USAGE EXAMPLE:
+
+// .h file
+
+enum class Cargo
+{
+  Ore,
+};
+
+DECLARE_ENUM_STR(Cargo);
+
+// .cpp file
+
+namespace
+{
+  const std::unordered_map<Cargo, std::string> CargoStrings
+  {
+    { Cargo::Ore, "Ore" },
+  };
+
+} // anonym NS
+
+
+DEFINE_ENUM_STR(Cargo, CargoStrings);
+
+*/
+
+
 #define DECLARE_ENUM_STR(EnumType) class EnumType##Str \
 { \
 public: \
