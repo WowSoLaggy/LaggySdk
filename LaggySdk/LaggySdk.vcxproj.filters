@@ -186,7 +186,7 @@
     <ClInclude Include="ITaggable.h">
       <Filter>src\Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="UniformIntGenerator.h">
+    <ClInclude Include="RandomGenerator.h">
       <Filter>src\Random</Filter>
     </ClInclude>
     <ClInclude Include="Shapes.h">
