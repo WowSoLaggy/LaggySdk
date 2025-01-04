@@ -72,6 +72,8 @@ namespace Sdk
       return std::atan2(detValue, dotValue);
     }
 
+    double angle() const { return std::atan2(y, x); }
+
 
     void rotate(double i_angle)
     {
