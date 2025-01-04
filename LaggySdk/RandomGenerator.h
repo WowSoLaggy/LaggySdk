@@ -1,9 +1,10 @@
 #pragma once
 
+
 namespace Sdk
 {
   // Generates uniformly-distributed int values in closed interval [i_left, i_right]
-  template<typename T>
+  template <typename T>
   class UniformIntGenerator
   {
   public:
@@ -26,7 +27,7 @@ namespace Sdk
 
 
   // Generates uniformly-distributed real values in closed interval [i_left, i_right]
-  template<typename T>
+  template <typename T>
   class UniformRealGenerator
   {
   public:
