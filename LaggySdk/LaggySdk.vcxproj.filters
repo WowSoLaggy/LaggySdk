@@ -255,6 +255,9 @@
     <ClInclude Include="Shuffle.h">
       <Filter>src\Random</Filter>
     </ClInclude>
+    <ClInclude Include="ICastable.h">
+      <Filter>src\Helpers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp">

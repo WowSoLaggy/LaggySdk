@@ -150,6 +150,7 @@
     <ClInclude Include="FpsCounter.h" />
     <ClInclude Include="HandleMessages.h" />
     <ClInclude Include="HandleResult.h" />
+    <ClInclude Include="ICastable.h" />
     <ClInclude Include="IEvent.h" />
     <ClInclude Include="ILockable.h" />
     <ClInclude Include="IModelName.h" />
