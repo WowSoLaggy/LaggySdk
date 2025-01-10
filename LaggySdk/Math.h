@@ -96,4 +96,15 @@ namespace Sdk
     return i_value < 0 ? T(-1) : T(1);
   }
 
+  template <typename T>
+  T normalizeAngle(const T i_angle)
+  {
+    T result = i_angle;
+    while (result < 0)
+      result += getPi<T>() * 2;
+    while (result >= getPi<T>() * 2)
+      result -= getPi<T>() * 2;
+    return result;
+  }
+
 } // ns Sdk
