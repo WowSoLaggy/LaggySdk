@@ -97,12 +97,21 @@ namespace Sdk
   }
 
   template <typename T>
-  T normalizeAngle(const T i_angle)
+  T normalizeAngle_0_2Pi(const T i_angle)
   {
     T result = i_angle;
     while (result < 0)
       result += getPi<T>() * 2;
     while (result >= getPi<T>() * 2)
+      result -= getPi<T>() * 2;
+    return result;
+  }
+
+  template <typename T>
+  T normalizeAngle_minusPi_Pi(const T i_angle)
+  {
+    T result = normalizeAngle_0_2Pi(i_angle);
+    if (result > getPi<T>())
       result -= getPi<T>() * 2;
     return result;
   }
