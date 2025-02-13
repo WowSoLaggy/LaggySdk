@@ -85,6 +85,9 @@
     <Filter Include="src\Serialization\Utils">
       <UniqueIdentifier>{df2a04b5-c052-43ab-b9c3-19d0504163f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ScopeGuard">
+      <UniqueIdentifier>{a164dfeb-eaf3-401b-8943-ed5a82e9027b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -257,6 +260,9 @@
     </ClInclude>
     <ClInclude Include="ICastable.h">
       <Filter>src\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopeGuard.h">
+      <Filter>src\ScopeGuard</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
