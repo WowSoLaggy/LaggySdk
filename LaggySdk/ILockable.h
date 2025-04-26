@@ -10,11 +10,11 @@ namespace Sdk
   public:
     virtual ~ILockable() = default;
 
-    void lock() { d_lock.lock(); }
-    void unlock() { d_lock.unlock(); }
+    void lock() const { d_lock.lock(); }
+    void unlock() const { d_lock.unlock(); }
 
   private:
-    std::mutex d_lock;
+    mutable std::mutex d_lock;
   };
 
 } // ns Sdk
