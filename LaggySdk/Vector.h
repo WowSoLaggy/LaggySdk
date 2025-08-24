@@ -143,6 +143,27 @@ namespace Sdk
   template <typename T>
   struct Vector3
   {
+    Vector3()
+      : Vector3((T)0, (T)0, (T)0)
+    {
+    }
+
+    Vector3(const T& i_x, const T& i_y, const T& i_z)
+      : x(i_x)
+      , y(i_y)
+      , z(i_z)
+    {
+    }
+
+    template <typename U, typename V, typename W>
+    Vector3(const U& i_x, const V& i_y, const W& i_z)
+      : x((T)i_x)
+      , y((T)i_y)
+      , z((T)i_z)
+    {
+    }
+
+
     T x{ (T)0 };
     T y{ (T)0 };
     T z{ (T)0 };
