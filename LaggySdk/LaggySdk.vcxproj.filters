@@ -88,6 +88,9 @@
     <Filter Include="src\ScopeGuard">
       <UniqueIdentifier>{a164dfeb-eaf3-401b-8943-ed5a82e9027b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Registry">
+      <UniqueIdentifier>{b90db74f-4843-4dc6-992c-621a33b29a42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h">
@@ -263,6 +266,9 @@
     </ClInclude>
     <ClInclude Include="ScopeGuard.h">
       <Filter>src\ScopeGuard</Filter>
+    </ClInclude>
+    <ClInclude Include="Registry.h">
+      <Filter>src\Registry</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

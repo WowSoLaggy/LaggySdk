@@ -179,6 +179,7 @@
     <ClInclude Include="Random.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="Registry.h" />
     <ClInclude Include="ScopeGuard.h" />
     <ClInclude Include="SdkFwd.h" />
     <ClInclude Include="SerializableBase.h" />
