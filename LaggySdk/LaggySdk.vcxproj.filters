@@ -341,5 +341,8 @@
     <ClCompile Include="Contracts.cpp">
       <Filter>src\Contracts</Filter>
     </ClCompile>
+    <ClCompile Include="Registry.cpp">
+      <Filter>src\Registry</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

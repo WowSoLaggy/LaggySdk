@@ -1,45 +1,47 @@
 #pragma once
 
+#include "SdkFwd.h"
+
 
 namespace Sdk
 {
-
-  template <typename Id>
   class Registry
   {
   public:
-    Id create() { return d_nextId++; }
+    EntityId create() { return d_nextId++; }
 
     template <class C>
-    C& add(const Id i_id, const C& i_component)
+    C& add(const EntityId i_id, const C& i_component)
     {
       return storage<C>()[i_id] = i_component;
     }
 
     template <class C>
-    C* find(const Id i_id)
+    C* find(const EntityId i_id)
     {
       auto& container = storage<C>();
       const auto it = container.find(i_id);
       return it != container.end() ? &it->second : nullptr;
     }
     template <class C>
-    const C* find(const Id i_id) const
+    const C* find(const EntityId i_id) const
     {
-      const auto& container = storage<C>();
-      const auto it = container.find(i_id);
-      return it != container.end() ? &it->second : nullptr;
+      const auto* container = storage<C>();
+      if (!container)
+        return nullptr;
+      const auto it = container->find(i_id);
+      return it != container->end() ? &it->second : nullptr;
     }
 
     template <class C>
-    C& get(const Id i_id)
+    C& get(const EntityId i_id)
     {
       auto* comp = find<C>(i_id);
       CONTRACT_ASSERT(comp, "Component not found");
       return *comp;
     }
     template <class C>
-    const C& get(const Id i_id) const
+    const C& get(const EntityId i_id) const
     {
       const auto* comp = find<C>(i_id);
       CONTRACT_ASSERT(comp, "Component not found");
@@ -47,42 +49,42 @@ namespace Sdk
     }
 
     template <class C>
-    std::unordered_map<Id, C>& all()
+    std::unordered_map<EntityId, C>& all()
     {
       return storage<C>();
     }
     template <class C>
-    const std::unordered_map<Id, C>& all() const
+    const std::unordered_map<EntityId, C>& all() const
     {
       return storage<C>();
     }
 
-    void remove(const Id i_id)
+    void remove(const EntityId i_id)
     {
       for (auto& [_, poolPtr] : d_pools)
         poolPtr->erase(i_id);
     }
 
   private:
-    Id d_nextId = 1;
+    EntityId d_nextId = 1;
 
     struct IPool
     {
       virtual ~IPool() = default;
-      virtual void erase(Id) = 0;
+      virtual void erase(EntityId i_id) = 0;
     };
 
     template<class C>
     struct Pool : IPool
     {
-      std::unordered_map<Id, C> data;
-      void erase(Id id) override { data.erase(id); }
+      std::unordered_map<EntityId, C> data;
+      void erase(EntityId i_id) override { data.erase(i_id); }
     };
 
     std::unordered_map<std::type_index, std::unique_ptr<IPool>> d_pools;
 
     template <class C>
-    std::unordered_map<Id, C>& storage()
+    std::unordered_map<EntityId, C>& storage()
     {
       const auto key = std::type_index(typeid(C));
       auto& poolPtr = d_pools[key];
@@ -92,7 +94,7 @@ namespace Sdk
     }
 
     template <class C>
-    const std::unordered_map<Id, C>* storage() const
+    const std::unordered_map<EntityId, C>* storage() const
     {
       const auto key = std::type_index(typeid(C));
       const auto it = d_pools.find(key);

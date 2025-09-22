@@ -214,6 +214,7 @@
     <ClCompile Include="Locker.cpp" />
     <ClCompile Include="MessageCodeUtils.cpp" />
     <ClCompile Include="Random.cpp" />
+    <ClCompile Include="Registry.cpp" />
     <ClCompile Include="SerializableBase.cpp" />
     <ClCompile Include="SerializableObject.cpp" />
     <ClCompile Include="Serializers.cpp" />

@@ -1,22 +1,18 @@
 #pragma once
 
+
 namespace Sdk
 {
-  class IEvent;
+  using EntityId = std::int32_t;
   class EventHandler;
-
-  using UniqueId = int;
-
-  struct Message;
-
-  class Window;
-
+  class IEvent;
   class ILockable;
-
+  class ISerializable;
   class IState;
   class ITransition;
-
-  class ISerializable;
+  struct Message;
+  using UniqueId = std::int32_t;
+  class Window;
 
 } // ns Sdk
 
