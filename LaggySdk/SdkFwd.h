@@ -11,6 +11,7 @@ namespace Sdk
   class IState;
   class ITransition;
   struct Message;
+  class Registry;
   using UniqueId = std::int32_t;
   class Window;
 
