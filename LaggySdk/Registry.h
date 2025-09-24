@@ -56,7 +56,10 @@ namespace Sdk
     template <class C>
     const std::unordered_map<EntityId, C>& all() const
     {
-      return storage<C>();
+      if (const auto* container = storage<C>())
+        return *container;
+      static const std::unordered_map<EntityId, C> empty;
+      return empty;
     }
 
     void remove(const EntityId i_id)
