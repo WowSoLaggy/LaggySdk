@@ -1,19 +1,20 @@
 #pragma once
 
+#include "EventHandler.h"
 #include "SdkFwd.h"
 
 
 namespace Sdk
 {
-  class Registry
+  class Registry : public EventHandler
   {
   public:
     EntityId create() { return d_nextId++; }
 
     template <class C>
-    C& add(const EntityId i_id, const C& i_component)
+    void add(const EntityId i_id, const C& i_component)
     {
-      return storage<C>()[i_id] = i_component;
+      storage<C>()[i_id] = i_component;
     }
 
     template <class C>
