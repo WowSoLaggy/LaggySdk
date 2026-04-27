@@ -5,10 +5,10 @@
 
 namespace Sdk
 {
-  /// Sets current time as a seed of the randomizer
+  // Sets current time as a seed of the randomizer
   void randomize();
 
-
+  // Returns a random integer in the range [i_left, i_right]
   template <typename T>
   T randomInt(const T i_left, const T i_right)
   {
