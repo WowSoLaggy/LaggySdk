@@ -148,6 +148,7 @@
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Files.h" />
     <ClInclude Include="FpsCounter.h" />
+    <ClInclude Include="Graph.h" />
     <ClInclude Include="HandleMessages.h" />
     <ClInclude Include="HandleResult.h" />
     <ClInclude Include="ICastable.h" />
@@ -205,6 +206,7 @@
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="FpsCounter.cpp" />
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="HandleMessages.cpp" />
     <ClCompile Include="ISerializable.cpp" />
     <ClCompile Include="IUniqueId.cpp" />

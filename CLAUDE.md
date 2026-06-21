@@ -75,6 +75,7 @@ Many headers named `I*.h` are **not abstract** — they are concrete mixin class
 
 ### Other notable pieces
 
+- `Graph.h` — header-only `Graph<NodeData, EdgeData>`: a generic graph with arbitrary payloads on every node and edge, addressed by stable `NodeId`/`EdgeId` handles (indices into append-only vectors; the graph never removes). Edges are stored directed but `getEdgesAt(node)` reports them undirected (so its size is the node's degree).
 - `StateMachine.h` — `IState` + `ITransition` based machine; `check()` walks transitions whose source matches the current state.
 - `Property<T>` — clamped numeric value with min/max and `getValueRelative()`.
 - `Window`, `Cursor`, `HandleMessages`, `Message` — thin Win32 wrappers (driven by `<Windows.h>` pulled in via `Common.h`).
