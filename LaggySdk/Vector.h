@@ -250,6 +250,43 @@ namespace Sdk
     }
 
 
+    // Return a copy rotated about the X axis by i_angle (radians); X is left untouched.
+    Vector3<T> rotateX(const double i_angle) const
+    {
+      const double cos = std::cos(i_angle);
+      const double sin = std::sin(i_angle);
+      return {
+        x,
+        static_cast<T>(y * cos + z * sin),
+        static_cast<T>(-y * sin + z * cos)
+      };
+    }
+
+    // Return a copy rotated about the Y axis by i_angle (radians); Y is left untouched.
+    Vector3<T> rotateY(const double i_angle) const
+    {
+      const double cos = std::cos(i_angle);
+      const double sin = std::sin(i_angle);
+      return {
+        static_cast<T>(x * cos + z * sin),
+        y,
+        static_cast<T>(-x * sin + z * cos)
+      };
+    }
+
+    // Return a copy rotated about the Z axis by i_angle (radians); Z is left untouched.
+    Vector3<T> rotateZ(const double i_angle) const
+    {
+      const double cos = std::cos(i_angle);
+      const double sin = std::sin(i_angle);
+      return {
+        static_cast<T>(x * cos + y * sin),
+        static_cast<T>(-x * sin + y * cos),
+        z
+      };
+    }
+
+
     template <typename V>
     Vector3<V> getVector() const
     {
