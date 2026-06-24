@@ -168,6 +168,12 @@ namespace Sdk
     T y{ (T)0 };
     T z{ (T)0 };
 
+
+    Vector2<T> xy() const { return { x, y }; }
+    Vector2<T> xz() const { return { x, z }; }
+    Vector2<T> yz() const { return { y, z }; }
+
+
     static Vector3 zero() { return { (T)0, (T)0, (T)0 }; }
     static Vector3 identity() { return { (T)1, (T)1, (T)1 }; }
 
