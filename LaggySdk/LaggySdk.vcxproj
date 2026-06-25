@@ -182,6 +182,7 @@
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Registry.h" />
     <ClInclude Include="ScopeGuard.h" />
+    <ClInclude Include="Spline.h" />
     <ClInclude Include="SdkFwd.h" />
     <ClInclude Include="SerializableBase.h" />
     <ClInclude Include="SerializableField.h" />

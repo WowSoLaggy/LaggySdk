@@ -123,6 +123,9 @@
     <ClInclude Include="Circle.h">
       <Filter>src\Math</Filter>
     </ClInclude>
+    <ClInclude Include="Spline.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
     <ClInclude Include="ITextureName.h">
       <Filter>src\Helpers</Filter>
     </ClInclude>
