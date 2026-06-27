@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Math.h"
+#include "Polyline.h"
 #include "Vector.h"
 
 
@@ -18,14 +19,15 @@ namespace Sdk
   class Spline
   {
   public:
-    explicit Spline(std::vector<Vector2<T>> i_controlPoints)
+    explicit Spline(Polyline2<T> i_controlPoints)
       : d_controlPoints(std::move(i_controlPoints))
     {
     }
 
     int getSegmentsCount() const
     {
-      return d_controlPoints.size() < 2 ? 0 : (int)d_controlPoints.size() - 1;
+      const auto count = d_controlPoints.points.size();
+      return count < 2 ? 0 : (int)count - 1;
     }
 
     bool isEmpty() const
@@ -54,7 +56,7 @@ namespace Sdk
 
     // Walks the whole spline emitting samples roughly every i_stepLen world units.
     // The polyline endpoints coincide with the first/last control point.
-    std::vector<Vector2<T>> sampleByStep(const T i_stepLen) const
+    Polyline2<T> sampleByStep(const T i_stepLen) const
     {
       std::vector<Vector2<T>> samples;
       if (isEmpty())
@@ -82,13 +84,13 @@ namespace Sdk
       return samples;
     }
 
-    const std::vector<Vector2<T>>& getControlPoints() const
+    const Polyline2<T>& getControlPoints() const
     {
       return d_controlPoints;
     }
 
   private:
-    std::vector<Vector2<T>> d_controlPoints;
+    Polyline2<T> d_controlPoints;
 
     // Returns the four control points (with clamped phantom ends) governing i_seg.
     void getSegmentPoints(
@@ -97,16 +99,17 @@ namespace Sdk
     {
       CONTRACT_EXPECT(i_seg >= 0 && i_seg < getSegmentsCount());
 
-      const int last = (int)d_controlPoints.size() - 1;
+      const std::vector<Vector2<T>>& pts = d_controlPoints.points;
+      const int last = (int)pts.size() - 1;
       const int i0 = clamp(i_seg - 1, 0, last);
       const int i1 = i_seg;
       const int i2 = i_seg + 1;
       const int i3 = clamp(i_seg + 2, 0, last);
 
-      o_p0 = d_controlPoints[i0];
-      o_p1 = d_controlPoints[i1];
-      o_p2 = d_controlPoints[i2];
-      o_p3 = d_controlPoints[i3];
+      o_p0 = pts[i0];
+      o_p1 = pts[i1];
+      o_p2 = pts[i2];
+      o_p3 = pts[i3];
     }
 
     // Catmull-Rom basis at local parameter i_t over its four control points.
