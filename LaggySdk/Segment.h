@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Math.h"   // Sdk::clamp, used by closestPointTo (must be visible at template definition)
 #include "Vector.h"
 
 
