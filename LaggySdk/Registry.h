@@ -12,9 +12,9 @@ namespace Sdk
     EntityId create() { return d_nextId++; }
 
     template <class C>
-    void add(const EntityId i_id, const C& i_component)
+    void add(const EntityId i_id, C i_component)
     {
-      storage<C>()[i_id] = i_component;
+      storage<C>().insert_or_assign(i_id, std::move(i_component)); // no default-construct: components need no default ctor
     }
 
     template <class C>
