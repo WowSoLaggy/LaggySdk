@@ -175,6 +175,7 @@
     <ClInclude Include="Math.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="MessageCodeUtils.h" />
+    <ClInclude Include="OrientedRect.h" />
     <ClInclude Include="PairHash.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="Random.h" />
