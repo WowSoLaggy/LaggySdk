@@ -47,6 +47,18 @@ namespace Sdk
     return i_val * (T)180 / getPi<T>();
   }
 
+  template <typename T>
+  constexpr T kmhToMs(T i_val)
+  {
+    return i_val / (T)3.6;
+  }
+
+  template <typename T>
+  constexpr T msToKmh(T i_val)
+  {
+    return i_val * (T)3.6;
+  }
+
 
   template<typename T>
   Quadrant getQuadrant(const Vector2<T> i_v)
