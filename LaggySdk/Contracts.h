@@ -67,4 +67,8 @@ namespace Sdk
 } while (false);
 
 
-#define SAFE_DEREF(x, ...) ([&]() -> auto& { if (x) return *(x); else throw Sdk::DereferenceFailedException(LOCATION, #x, ##__VA_ARGS__); }())
+// Evaluates x once (it may be a call with side effects), then checks and dereferences the result
+#define SAFE_DEREF(x, ...) ([&]() -> auto& { \
+  auto&& safeDerefValue = (x); \
+  if (safeDerefValue) return *safeDerefValue; \
+  throw Sdk::DereferenceFailedException(LOCATION, #x, ##__VA_ARGS__); }())
